@@ -1,0 +1,969 @@
+
+.service-details-page {
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    min-height: 0;
+
+    display: flex;
+    justify-content: center;
+
+    overflow: hidden;
+    background: #E7DED3;
+    color: #2B1D18;
+}
+
+.service-details-page,
+.service-details-page * {
+    box-sizing: border-box;
+}
+
+.service-details-shell {
+    width: 100%;
+    max-width: 680px;
+    height: 100%;
+    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+    background: #F7F3ED;
+    box-shadow: 0 0 30px rgb(43 29 24 / 8%);
+}
+
+.service-details-header {
+    flex: 0 0 auto;
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 13px 18px;
+    border-bottom: 1px solid #E7DED3;
+    background: #F7F3ED;
+}
+
+.service-details-page .brand-badge.service-details-logo {
+    position: relative;
+    flex: 0 0 auto;
+    align-self: center;
+    transform: none;
+    margin: 0;
+}
+
+.service-back-button {
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+
+    display: grid;
+    place-items: center;
+
+    padding: 0;
+    color: #2B1D18;
+    background: #FFFEFC;
+    border: 1px solid #D9C9B8;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.service-back-button svg,
+.service-primary-button svg,
+.service-deliverables svg,
+.service-package-check svg,
+.service-rating-line svg,
+.service-seller-stats svg {
+    width: 17px;
+    height: 17px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.service-header-copy {
+    flex: 1;
+    min-width: 0;
+}
+
+.service-header-copy p {
+    margin: 0 0 3px;
+
+    color: #8B7869;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+}
+
+.service-header-copy h1 {
+    margin: 0;
+
+    color: #2B1D18;
+    font-family: "Bodoni 72", Didot, "Bodoni MT", Georgia, serif;
+    font-size: clamp(1.25rem, 4vw, 1.7rem);
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+.service-details-content {
+    flex: 1;
+    min-height: 0;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    padding: 19px 21px 27px;
+    scrollbar-width: thin;
+    scrollbar-color: #D9C9B8 transparent;
+}
+
+.service-breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+
+    margin-bottom: 17px;
+
+    color: #8B7869;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.65rem;
+    line-height: 1.6;
+}
+
+.service-breadcrumb button {
+    padding: 0;
+    color: #8A672E;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+}
+
+.service-breadcrumb button:hover {
+    text-decoration: underline;
+}
+
+.service-detail-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 19px;
+    align-items: start;
+}
+
+.service-gallery {
+    position: relative;
+    overflow: hidden;
+
+    aspect-ratio: 1 / 1;
+    background: #30206A;
+    border: 1px solid #E6D9CA;
+    border-radius: 16px;
+}
+
+.service-gallery > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-gallery-badge {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+
+    max-width: calc(100% - 20px);
+    padding: 6px 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    color: #FFF9F1;
+    background: rgb(43 29 24 / 88%);
+    border-radius: 7px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.61rem;
+}
+
+.service-summary {
+    min-width: 0;
+    padding-top: 3px;
+}
+
+.service-details-eyebrow {
+    margin: 0;
+
+    color: #9A7435;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.61rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    line-height: 1.55;
+}
+
+.service-summary h2 {
+    margin: 7px 0 9px;
+
+    color: #2B1D18;
+    font-family: "Bodoni 72", Didot, "Bodoni MT", Georgia, serif;
+    font-size: clamp(1.6rem, 4.6vw, 2.2rem);
+    font-weight: 400;
+    line-height: 1.08;
+}
+
+.service-summary-description {
+    margin: 0 0 12px;
+
+    color: #75665D;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.77rem;
+    line-height: 1.6;
+}
+
+.service-rating-line {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+
+    margin-bottom: 15px;
+
+    color: #8B7869;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.68rem;
+}
+
+.service-rating-line svg {
+    width: 15px;
+    height: 15px;
+    fill: #C8A45D;
+    stroke: #C8A45D;
+}
+
+.service-rating-line strong {
+    color: #8A672E;
+}
+
+.service-seller-line {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 12px 0;
+    border-top: 1px solid #E6D9CA;
+    border-bottom: 1px solid #E6D9CA;
+}
+
+.service-seller-avatar {
+    flex: 0 0 37px;
+    width: 37px;
+    height: 37px;
+
+    display: grid;
+    place-items: center;
+
+    color: #604A36;
+    background: #F0E2CA;
+    border: 1px solid #E5D3B4;
+    border-radius: 50%;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.71rem;
+    font-weight: 700;
+}
+
+.service-seller-line > div {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.service-seller-line > div > strong {
+    overflow-wrap: anywhere;
+
+    color: #2B1D18;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.76rem;
+}
+
+.service-seller-line > div > span {
+    color: #8B7869;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.64rem;
+}
+
+.service-summary-price {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 7px;
+
+    padding: 14px 0 11px;
+}
+
+.service-summary-price > span:first-child {
+    width: 100%;
+
+    color: #8B7869;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.65rem;
+}
+
+.service-summary-price > strong {
+    color: #2B1D18;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25rem;
+}
+
+.service-demo-pill {
+    padding: 4px 6px;
+
+    color: #8A672E;
+    background: #F5EAD7;
+    border-radius: 5px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.56rem;
+}
+
+.service-save-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 8px 11px;
+
+    color: #60451F;
+    background: transparent;
+    border: 1px solid #D9C9B8;
+    border-radius: 9px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.68rem;
+    cursor: pointer;
+}
+
+.service-save-button > span {
+    font-size: 1rem;
+}
+
+.service-save-button:hover,
+.service-save-button.saved {
+    color: #8A672E;
+    background: #F5EAD7;
+    border-color: #C8A45D;
+}
+
+.service-packages-section {
+    margin-top: 28px;
+    padding-top: 22px;
+    border-top: 1px solid #E6D9CA;
+}
+
+.service-section-heading h2 {
+    margin: 5px 0 6px;
+
+    color: #2B1D18;
+    font-family: "Bodoni 72", Didot, "Bodoni MT", Georgia, serif;
+    font-size: 1.65rem;
+    font-weight: 400;
+}
+
+.service-section-heading > p:last-child {
+    margin: 0;
+
+    color: #75665D;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.73rem;
+    line-height: 1.6;
+}
+
+.service-package-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 9px;
+
+    margin-top: 15px;
+}
+
+.service-package-card {
+    min-width: 0;
+    min-height: 157px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+
+    padding: 12px 10px;
+
+    color: #2B1D18;
+    text-align: left;
+    background: #FFFEFC;
+    border: 1px solid #E6D9CA;
+    border-radius: 12px;
+
+    cursor: pointer;
+    transition: border-color 150ms ease, background 150ms ease;
+}
+
+.service-package-card:hover {
+    border-color: #C8A45D;
+}
+
+.service-package-card.selected {
+    background: #F7EEDC;
+    border: 1.5px solid #B58D49;
+    box-shadow: inset 0 0 0 1px rgb(200 164 93 / 13%);
+}
+
+.service-package-top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+
+    color: #2B1D18;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.service-package-check {
+    flex: 0 0 18px;
+    width: 18px;
+    height: 18px;
+
+    display: grid;
+    place-items: center;
+
+    color: #8A672E;
+    background: #E9D8B5;
+    border-radius: 50%;
+}
+
+.service-package-check svg {
+    width: 12px;
+    height: 12px;
+}
+
+.service-package-description {
+    min-height: 31px;
+
+    color: #75665D;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.61rem;
+    line-height: 1.5;
+}
+
+.service-package-price {
+    margin-top: auto;
+
+    color: #2B1D18;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+.service-package-detail {
+    color: #75665D;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.61rem;
+    line-height: 1.4;
+}
+
+.service-order-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    margin-top: 13px;
+    padding: 13px 14px;
+
+    background: #FFFEFC;
+    border: 1px solid #E6D9CA;
+    border-radius: 12px;
+}
+
+.service-order-summary > div {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.service-order-summary > div > span {
+    color: #8B7869;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.62rem;
+}
+
+.service-order-summary > div > strong {
+    color: #2B1D18;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.82rem;
+}
+
+.service-primary-button {
+    flex: 0 0 auto;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 41px;
+    padding: 10px 12px;
+
+    color: #FFF9F1;
+    background: #2B1D18;
+    border: 0;
+    border-radius: 10px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.service-primary-button:hover {
+    color: #2B1D18;
+    background: #D7B45F;
+}
+
+.service-primary-button > span {
+    font-size: 1rem;
+}
+
+.service-action-notice {
+    margin: 12px 0 0;
+    padding: 12px;
+
+    color: #785923;
+    background: #F8EFD9;
+    border: 1px solid #E9D6A9;
+    border-radius: 9px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.73rem;
+    line-height: 1.6;
+}
+
+.service-information-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+
+    margin-top: 27px;
+}
+
+.service-information-card {
+    min-width: 0;
+    padding: 17px 14px;
+
+    background: #FFFEFC;
+    border: 1px solid #E6D9CA;
+    border-radius: 14px;
+}
+
+.service-information-card > h2 {
+    margin: 6px 0 10px;
+
+    color: #2B1D18;
+    font-family: "Bodoni 72", Didot, "Bodoni MT", Georgia, serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.service-information-copy {
+    margin: 0;
+
+    color: #75665D;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.73rem;
+    line-height: 1.7;
+}
+
+.service-information-card > h3 {
+    margin: 20px 0 11px;
+
+    color: #2B1D18;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.82rem;
+}
+
+.service-deliverables {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.service-deliverables li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+
+    color: #75665D;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.69rem;
+    line-height: 1.55;
+}
+
+.service-deliverables li > span {
+    flex: 0 0 17px;
+    width: 17px;
+    height: 17px;
+
+    display: grid;
+    place-items: center;
+
+    color: #8A672E;
+    background: #F5EAD7;
+    border-radius: 50%;
+}
+
+.service-deliverables svg {
+    width: 11px;
+    height: 11px;
+}
+
+.service-seller-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin: 15px 0;
+}
+
+.service-seller-avatar.large {
+    flex-basis: 47px;
+    width: 47px;
+    height: 47px;
+    font-size: 0.82rem;
+}
+
+.service-seller-profile > div {
+    min-width: 0;
+}
+
+.service-seller-profile h2 {
+    margin: 0 0 5px;
+
+    overflow-wrap: anywhere;
+    color: #2B1D18;
+    font-family: "Bodoni 72", Didot, Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.service-seller-profile p {
+    margin: 0;
+
+    color: #75665D;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.68rem;
+    line-height: 1.5;
+}
+
+.service-seller-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+
+    margin-bottom: 15px;
+}
+
+.service-seller-stats > div {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+
+    padding: 9px 7px;
+
+    background: #F8F2E8;
+    border-radius: 8px;
+}
+
+.service-seller-stats svg {
+    width: 13px;
+    height: 13px;
+
+    fill: #C8A45D;
+    stroke: #C8A45D;
+}
+
+.service-seller-stats strong {
+    color: #2B1D18;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.73rem;
+}
+
+.service-seller-stats span {
+    color: #8B7869;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.56rem;
+    line-height: 1.4;
+}
+
+.service-secondary-button {
+    width: 100%;
+    min-height: 40px;
+
+    margin-top: 14px;
+    padding: 9px 12px;
+
+    color: #60451F;
+    background: #F5EAD7;
+    border: 1px solid #E5D3B4;
+    border-radius: 9px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.service-secondary-button:hover {
+    background: #EEDAB6;
+}
+
+.service-review-card {
+    margin-top: 20px;
+    padding: 19px 17px;
+
+    background: #F5EAD7;
+    border: 1px solid #E5D3B4;
+    border-radius: 14px;
+}
+
+.service-review-card h2 {
+    margin: 6px 0 11px;
+
+    color: #2B1D18;
+    font-family: "Bodoni 72", Didot, Georgia, serif;
+    font-size: 1.45rem;
+    font-weight: 400;
+}
+
+.service-review-stars {
+    color: #A67F3F;
+    letter-spacing: 0.12em;
+    font-size: 0.86rem;
+}
+
+.service-review-card blockquote {
+    margin: 10px 0;
+
+    color: #604F43;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.78rem;
+    line-height: 1.7;
+}
+
+.service-review-disclaimer {
+    margin: 0;
+
+    color: #8B7869;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.61rem;
+    line-height: 1.6;
+}
+
+.service-details-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 24px;
+    padding: 17px 0 7px;
+    border-top: 1px solid #E6D9CA;
+
+    text-align: center;
+}
+
+.service-details-footer > span,
+.service-details-footer > strong {
+    color: #A67F3F;
+}
+
+.service-details-footer > span {
+    font-size: 0.92rem;
+}
+
+.service-details-footer p {
+    margin: 0;
+
+    color: #8B7869;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.67rem;
+}
+
+.service-details-footer > strong {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.15em;
+}
+
+.service-not-found {
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+
+    padding: 28px;
+    text-align: center;
+}
+
+.service-not-found h1 {
+    margin: 0;
+
+    color: #2B1D18;
+    font-family: "Bodoni 72", Didot, Georgia, serif;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.service-not-found > p:not(.service-details-eyebrow) {
+    color: #75665D;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.service-not-found .service-primary-button {
+    margin-bottom: auto;
+}
+
+.service-details-page button:focus-visible {
+    outline: 2px solid #B58D49;
+    outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+    .service-details-header {
+        gap: 8px;
+        padding: 11px 13px;
+    }
+
+    .service-details-content {
+        padding: 16px 13px 23px;
+    }
+
+    .service-back-button {
+        flex-basis: 32px;
+        width: 32px;
+        height: 32px;
+    }
+
+    .service-header-copy p {
+        font-size: 0.51rem;
+        letter-spacing: 0.1em;
+    }
+
+    .service-header-copy h1 {
+        font-size: 1.25rem;
+    }
+
+    .service-detail-hero {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 15px;
+    }
+
+    .service-gallery {
+        max-height: 330px;
+        aspect-ratio: 1.15 / 1;
+    }
+
+    .service-summary h2 {
+        font-size: 2rem;
+    }
+
+    .service-package-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 9px;
+    }
+
+    .service-package-card {
+        min-height: 0;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 6px 10px;
+
+        padding: 12px;
+    }
+
+    .service-package-top,
+    .service-package-description,
+    .service-package-price,
+    .service-package-detail {
+        grid-column: 1;
+    }
+
+    .service-package-top {
+        grid-row: 1;
+    }
+
+    .service-package-description {
+        min-height: 0;
+        grid-row: 2;
+    }
+
+    .service-package-price {
+        grid-row: 3;
+        margin-top: 2px;
+    }
+
+    .service-package-detail {
+        grid-row: 4;
+    }
+
+    .service-package-check {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .service-order-summary {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .service-order-summary .service-primary-button {
+        width: 100%;
+    }
+
+    .service-information-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 11px;
+    }
+
+    .service-information-card {
+        padding: 16px 13px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .service-package-card,
+    .service-back-button,
+    .service-save-button {
+        transition: none;
+    }
+}

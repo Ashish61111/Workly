@@ -1,0 +1,991 @@
+
+.checkout-page {
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    min-height: 0;
+
+    display: flex;
+    justify-content: center;
+
+    overflow: hidden;
+    background: #E7DED3;
+    color: #2B1D18;
+}
+
+.checkout-page,
+.checkout-page * {
+    box-sizing: border-box;
+}
+
+.checkout-shell {
+    width: 100%;
+    max-width: 680px;
+    height: 100%;
+    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+    background: #F7F3ED;
+    box-shadow: 0 0 30px rgb(43 29 24 / 8%);
+}
+
+.checkout-header {
+    flex: 0 0 auto;
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px 17px;
+    border-bottom: 1px solid #E7DED3;
+    background: #F7F3ED;
+}
+
+.checkout-page .brand-badge.checkout-logo-badge {
+    position: relative;
+    flex: 0 0 auto;
+    align-self: center;
+    transform: none;
+    margin: 0;
+}
+
+.checkout-back-button {
+    flex: 0 0 35px;
+    width: 35px;
+    height: 35px;
+
+    display: grid;
+    place-items: center;
+
+    padding: 0;
+    color: #2B1D18;
+    background: #FFFEFC;
+    border: 1px solid #D9C9B8;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.checkout-back-button svg {
+    width: 17px;
+    height: 17px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.checkout-header-copy {
+    flex: 1;
+    min-width: 0;
+}
+
+.checkout-header-copy p {
+    margin: 0 0 3px;
+
+    color: #8B7869;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.checkout-header-copy h1 {
+    margin: 0;
+
+    color: #2B1D18;
+    font-family: "Bodoni 72", Didot, "Bodoni MT", Georgia, serif;
+    font-size: clamp(1.2rem, 4vw, 1.65rem);
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+.checkout-content {
+    flex: 1;
+    min-height: 0;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    padding: 18px 22px 26px;
+    scrollbar-width: thin;
+    scrollbar-color: #D9C9B8 transparent;
+}
+
+.checkout-breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+
+    margin-bottom: 18px;
+
+    color: #8B7869;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.65rem;
+    line-height: 1.6;
+}
+
+.checkout-breadcrumb button {
+    padding: 0;
+
+    color: #8A672E;
+    background: transparent;
+    border: 0;
+
+    font: inherit;
+    cursor: pointer;
+}
+
+.checkout-breadcrumb button:hover {
+    text-decoration: underline;
+}
+
+.checkout-heading {
+    margin-bottom: 21px;
+}
+
+.checkout-eyebrow {
+    margin: 0;
+
+    color: #9A7435;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.61rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    line-height: 1.55;
+}
+
+.checkout-heading h2 {
+    margin: 7px 0;
+
+    color: #2B1D18;
+    font-family: "Bodoni 72", Didot, "Bodoni MT", Georgia, serif;
+    font-size: clamp(2rem, 5.4vw, 2.65rem);
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.checkout-heading > p:last-child {
+    margin: 0;
+
+    color: #75665D;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.82rem;
+    line-height: 1.6;
+}
+
+.checkout-step-indicator {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    margin: 22px 0 25px;
+}
+
+.checkout-step {
+    flex: 0 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.checkout-step > span {
+    width: 29px;
+    height: 29px;
+
+    display: grid;
+    place-items: center;
+
+    color: #8B7869;
+    background: #FFFEFC;
+    border: 1px solid #D9C9B8;
+    border-radius: 50%;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.checkout-step.active > span {
+    color: #FFF9F1;
+    background: #2B1D18;
+    border-color: #2B1D18;
+}
+
+.checkout-step > p {
+    margin: 0;
+
+    color: #8B7869;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.61rem;
+    text-align: center;
+}
+
+.checkout-step.active > p {
+    color: #60451F;
+    font-weight: 700;
+}
+
+.checkout-step-line {
+    flex: 1;
+    height: 1px;
+    min-width: 8px;
+    margin-top: -18px;
+
+    background: #D9C9B8;
+}
+
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.checkout-section {
+    min-width: 0;
+    padding: 18px 16px;
+
+    background: #FFFEFC;
+    border: 1px solid #E6D9CA;
+    border-radius: 15px;
+}
+
+.checkout-section-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+
+    margin-bottom: 19px;
+}
+
+.checkout-section-heading h2 {
+    margin: 5px 0 0;
+
+    color: #2B1D18;
+    font-family: "Bodoni 72", Didot, "Bodoni MT", Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.checkout-section-number {
+    color: #C8A45D;
+    font-family: "Bodoni 72", Didot, Georgia, serif;
+    font-size: 1.6rem;
+}
+
+.checkout-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    margin-bottom: 15px;
+}
+
+.checkout-field:last-child {
+    margin-bottom: 0;
+}
+
+.checkout-field > span {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    color: #2B1D18;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.76rem;
+    font-weight: 700;
+}
+
+.checkout-optional {
+    color: #8B7869;
+    font-size: 0.65rem;
+    font-weight: 400;
+}
+
+.checkout-field input,
+.checkout-field textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 12px 13px;
+
+    color: #2B1D18;
+    background: #FFFEFC;
+    border: 1px solid #D9C9B8;
+    border-radius: 10px;
+    outline: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.81rem;
+}
+
+.checkout-field input {
+    min-height: 44px;
+}
+
+.checkout-field textarea {
+    min-height: 120px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.checkout-field input::placeholder,
+.checkout-field textarea::placeholder {
+    color: #A29487;
+}
+
+.checkout-field input:focus,
+.checkout-field textarea:focus {
+    border-color: #B58D49;
+    box-shadow: 0 0 0 3px rgb(200 164 93 / 15%);
+}
+
+.checkout-field > small:not(.checkout-optional) {
+    color: #8B7869;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.63rem;
+    text-align: right;
+}
+
+.checkout-field-note {
+    margin: 15px 0 0;
+    padding: 11px 12px;
+
+    color: #785923;
+    background: #F8EFD9;
+    border: 1px solid #E9D6A9;
+    border-radius: 9px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.69rem;
+    line-height: 1.6;
+}
+
+.checkout-package-options {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.checkout-package-option {
+    width: 100%;
+    min-width: 0;
+
+    display: grid;
+    grid-template-columns: 18px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 11px;
+
+    padding: 13px 12px;
+
+    color: #2B1D18;
+    text-align: left;
+    background: #FFFEFC;
+    border: 1px solid #E6D9CA;
+    border-radius: 11px;
+
+    cursor: pointer;
+    transition: border-color 150ms ease, background 150ms ease;
+}
+
+.checkout-package-option:hover {
+    border-color: #C8A45D;
+}
+
+.checkout-package-option.selected {
+    background: #F8F0E0;
+    border-color: #B58D49;
+    box-shadow: inset 0 0 0 1px rgb(200 164 93 / 12%);
+}
+
+.checkout-package-radio {
+    width: 17px;
+    height: 17px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1.5px solid #B7A493;
+    border-radius: 50%;
+}
+
+.checkout-package-option.selected .checkout-package-radio {
+    border-color: #8A672E;
+}
+
+.checkout-package-radio > span {
+    width: 9px;
+    height: 9px;
+
+    background: #8A672E;
+    border-radius: 50%;
+}
+
+.checkout-package-copy {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.checkout-package-copy > strong {
+    color: #2B1D18;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.79rem;
+}
+
+.checkout-package-copy > span,
+.checkout-package-copy > small {
+    color: #75665D;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.68rem;
+    line-height: 1.4;
+}
+
+.checkout-package-price {
+    color: #2B1D18;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.86rem;
+    white-space: nowrap;
+}
+
+.checkout-package-note {
+    margin: 12px 0 0;
+
+    color: #8B7869;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.65rem;
+    line-height: 1.6;
+}
+
+.checkout-confirmation {
+    padding: 14px;
+
+    background: #F5EAD7;
+    border: 1px solid #E5D3B4;
+    border-radius: 11px;
+}
+
+.checkout-confirmation-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    color: #604F43;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.72rem;
+    line-height: 1.6;
+
+    cursor: pointer;
+}
+
+.checkout-confirmation-label input {
+    flex: 0 0 auto;
+    width: 17px;
+    height: 17px;
+    margin-top: 2px;
+
+    accent-color: #8A672E;
+}
+
+.checkout-primary-button {
+    min-height: 45px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    padding: 12px 15px;
+
+    color: #FFF9F1;
+    background: #2B1D18;
+    border: 1px solid #2B1D18;
+    border-radius: 10px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.checkout-primary-button:hover {
+    color: #2B1D18;
+    background: #D7B45F;
+    border-color: #D7B45F;
+}
+
+.checkout-primary-button svg {
+    width: 17px;
+    height: 17px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.checkout-submit-button {
+    width: 100%;
+    min-height: 49px;
+}
+
+.checkout-submit-button > span {
+    font-size: 1.1rem;
+}
+
+.checkout-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    margin: 0;
+    padding: 13px;
+
+    color: #785923;
+    background: #F8EFD9;
+    border: 1px solid #E9D6A9;
+    border-radius: 10px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.74rem;
+    line-height: 1.65;
+}
+
+.checkout-notice svg {
+    flex: 0 0 18px;
+    width: 18px;
+    height: 18px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.checkout-order-summary {
+    margin-top: 24px;
+    padding: 18px 16px;
+
+    background: #FFFEFC;
+    border: 1px solid #E6D9CA;
+    border-radius: 15px;
+    box-shadow: 0 4px 14px rgb(43 29 24 / 3%);
+}
+
+.checkout-summary-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+
+    margin-bottom: 16px;
+}
+
+.checkout-summary-heading h2 {
+    margin: 5px 0 0;
+
+    color: #2B1D18;
+    font-family: "Bodoni 72", Didot, "Bodoni MT", Georgia, serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.checkout-summary-heading > span {
+    color: #C8A45D;
+    font-size: 1.6rem;
+}
+
+.checkout-summary-service {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding-bottom: 15px;
+    border-bottom: 1px solid #E6D9CA;
+}
+
+.checkout-summary-service > img {
+    flex: 0 0 76px;
+    width: 76px;
+    height: 68px;
+
+    object-fit: cover;
+    background: #30206A;
+    border-radius: 9px;
+}
+
+.checkout-summary-service > div {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.checkout-summary-service strong {
+    color: #2B1D18;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.83rem;
+    line-height: 1.4;
+}
+
+.checkout-summary-service > div > span:not(.checkout-demo-label) {
+    color: #75665D;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.7rem;
+}
+
+.checkout-demo-label {
+    padding: 4px 6px;
+
+    color: #8A672E;
+    background: #F5EAD7;
+    border-radius: 5px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.58rem;
+}
+
+.checkout-summary-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+
+    padding: 12px 0;
+    border-bottom: 1px solid #F0E8DF;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.73rem;
+}
+
+.checkout-summary-row > span {
+    color: #75665D;
+}
+
+.checkout-summary-row > strong {
+    color: #2B1D18;
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+.checkout-summary-total {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+
+    padding: 17px 0 5px;
+
+    color: #2B1D18;
+}
+
+.checkout-summary-total > span {
+    color: #604F43;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.74rem;
+    font-weight: 700;
+}
+
+.checkout-summary-total > strong {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25rem;
+    white-space: nowrap;
+}
+
+.checkout-payment-note,
+.checkout-summary-assurance {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+
+    margin-top: 14px;
+    padding: 11px;
+
+    border-radius: 9px;
+}
+
+.checkout-payment-note {
+    color: #785923;
+    background: #F8EFD9;
+}
+
+.checkout-summary-assurance {
+    color: #604F43;
+    background: #F7F3ED;
+}
+
+.checkout-payment-note > span,
+.checkout-summary-assurance > span {
+    flex: 0 0 18px;
+    width: 18px;
+    height: 18px;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 1rem;
+}
+
+.checkout-summary-assurance svg {
+    width: 17px;
+    height: 17px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.checkout-payment-note p,
+.checkout-summary-assurance p {
+    margin: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.67rem;
+    line-height: 1.6;
+}
+
+.checkout-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 25px;
+    padding: 17px 0 7px;
+    border-top: 1px solid #E6D9CA;
+
+    text-align: center;
+}
+
+.checkout-footer > span,
+.checkout-footer > strong {
+    color: #A67F3F;
+}
+
+.checkout-footer p {
+    margin: 0;
+
+    color: #8B7869;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.67rem;
+}
+
+.checkout-footer > strong {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.15em;
+}
+
+.checkout-not-found {
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 24px;
+    text-align: center;
+}
+
+.checkout-not-found h1 {
+    margin: 0;
+
+    color: #2B1D18;
+    font-family: "Bodoni 72", Didot, Georgia, serif;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.checkout-not-found > p:not(.checkout-eyebrow) {
+    color: #75665D;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.82rem;
+    line-height: 1.6;
+}
+
+.checkout-not-found .checkout-primary-button {
+    margin-bottom: auto;
+}
+
+.checkout-page button:focus-visible {
+    outline: 2px solid #B58D49;
+    outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+    .checkout-header {
+        gap: 8px;
+        padding: 11px 13px;
+    }
+
+    .checkout-back-button {
+        flex-basis: 32px;
+        width: 32px;
+        height: 32px;
+    }
+
+    .checkout-header-copy p {
+        font-size: 0.5rem;
+        letter-spacing: 0.09em;
+    }
+
+    .checkout-header-copy h1 {
+        font-size: 1.18rem;
+    }
+
+    .checkout-content {
+        padding: 15px 13px 23px;
+    }
+
+    .checkout-section {
+        padding: 15px 12px;
+    }
+
+    .checkout-section-heading h2 {
+        font-size: 1.38rem;
+    }
+
+    .checkout-package-option {
+        grid-template-columns: 17px minmax(0, 1fr) auto;
+        gap: 8px;
+        padding: 11px 9px;
+    }
+
+    .checkout-package-copy > span,
+    .checkout-package-copy > small {
+        font-size: 0.63rem;
+    }
+
+    .checkout-package-price {
+        font-size: 0.76rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .checkout-package-option {
+        transition: none;
+    }
+}
+
+
+.checkout-review-panel {
+    margin-top: 22px;
+    padding: 20px 17px;
+
+    background: #FFFEFC;
+    border: 1px solid #C8A45D;
+    border-radius: 15px;
+}
+
+.checkout-review-panel h2 {
+    margin: 6px 0;
+
+    color: #2B1D18;
+    font-family: "Bodoni 72", Didot, Georgia, serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.checkout-review-intro {
+    margin: 0 0 16px;
+    color: #75665D;
+    font: 0.8rem/1.6 Arial, sans-serif;
+}
+
+.checkout-review-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 14px;
+
+    padding: 12px 0;
+    border-bottom: 1px solid #EDE4D9;
+
+    font: 0.77rem/1.5 Arial, sans-serif;
+}
+
+.checkout-review-row > span,
+.checkout-review-requirements > span {
+    color: #75665D;
+}
+
+.checkout-review-row > strong {
+    max-width: 62%;
+    color: #2B1D18;
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+.checkout-review-requirements {
+    padding: 14px 0;
+    border-bottom: 1px solid #EDE4D9;
+
+    font: 0.77rem/1.6 Arial, sans-serif;
+}
+
+.checkout-review-requirements p {
+    margin: 7px 0 0;
+    color: #2B1D18;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.checkout-review-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    padding: 18px 0;
+
+    color: #2B1D18;
+    font: 700 0.82rem/1.5 Arial, sans-serif;
+}
+
+.checkout-review-total strong {
+    font-size: 1.2rem;
+    white-space: nowrap;
+}
+
+.checkout-review-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.checkout-edit-button {
+    min-height: 44px;
+    padding: 11px 15px;
+
+    color: #60451F;
+    background: #F5EAD7;
+    border: 1px solid #E5D3B4;
+    border-radius: 10px;
+
+    font: 700 0.76rem Arial, sans-serif;
+    cursor: pointer;
+}
+
+.checkout-review-actions .checkout-primary-button {
+    flex: 1;
+}
+
+.checkout-edit-button:hover {
+    background: #EEDAB6;
+}

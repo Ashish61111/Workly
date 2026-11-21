@@ -1,0 +1,2236 @@
+/* =========================================================
+   WORKLY - FREELANCER GIG MANAGEMENT
+   Desktop and mobile responsive styles
+   ========================================================= */
+
+:root {
+    --fg-espresso: #2B1D18;
+    --fg-espresso-light: #432F27;
+    --fg-ivory: #F7F3ED;
+    --fg-white: #FFFFFF;
+    --fg-gold: #C8A45D;
+    --fg-gold-light: #EBD9B4;
+    --fg-muted: #796E63;
+    --fg-border: #E8DFD3;
+    --fg-surface: #FCFAF7;
+    --fg-danger: #A13E32;
+}
+
+/* =========================================================
+   GIG CAPACITY
+   ========================================================= */
+
+.fg-capacity-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin: 22px 0 16px;
+    padding: 17px 20px;
+    border: 1px solid var(--fg-border);
+    border-radius: 15px;
+    background: var(--fg-white);
+}
+
+.fg-capacity-row > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    min-width: 0;
+}
+
+.fg-capacity-icon {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: #F4EADB;
+    color: #A47A35;
+    font-size: 20px;
+}
+
+.fg-capacity-row strong {
+    display: block;
+    color: var(--fg-espresso);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.fg-capacity-row p {
+    margin: 4px 0 0;
+    color: var(--fg-muted);
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.fg-capacity-bars {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 0 0 auto;
+}
+
+.fg-capacity-bars span {
+    width: 42px;
+    height: 7px;
+    display: block;
+    border-radius: 99px;
+    background: #E9E1D7;
+}
+
+.fg-capacity-bars span.is-filled {
+    background: var(--fg-gold);
+}
+
+
+/* =========================================================
+   WORKLY PAYMENT POLICY
+   ========================================================= */
+
+.fg-policy {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    margin: 16px 0 22px;
+    padding: 16px 18px;
+    border: 1px solid #EAD6AE;
+    border-radius: 14px;
+    background: #FFF7E9;
+    color: #4C3824;
+}
+
+.fg-policy > span {
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: #F1DFBA;
+    color: #855A21;
+    font-size: 20px;
+}
+
+.fg-policy > div {
+    flex: 1;
+    min-width: 0;
+}
+
+.fg-policy strong {
+    display: block;
+    color: #553E26;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.fg-policy p {
+    margin: 5px 0 0;
+    color: #775E40;
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.fg-policy.is-compact {
+    margin-top: 23px;
+    padding: 13px;
+    border-radius: 11px;
+}
+
+.fg-policy.is-compact strong {
+    font-size: 10px;
+}
+
+.fg-policy.is-compact p {
+    font-size: 9px;
+}
+
+.fg-notice {
+    margin: 16px 0;
+    padding: 12px 14px;
+    border: 1px solid #CDE3D0;
+    border-radius: 10px;
+    background: #EAF4E9;
+    color: #28643A;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   GIG SECTION HEADER
+   ========================================================= */
+
+.fg-gigs-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 27px 0 16px;
+}
+
+.fg-gigs-header > div {
+    min-width: 0;
+}
+
+.fg-gigs-header h2 {
+    margin: 4px 0 5px;
+    color: var(--fg-espresso);
+    font-size: 22px;
+    font-weight: 750;
+    letter-spacing: -0.035em;
+}
+
+.fg-gigs-header p:not(.fw-eyebrow) {
+    margin: 0;
+    color: var(--fg-muted);
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.fg-empty {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin: 18px 0;
+    padding: 48px 24px;
+    border: 1px dashed #D8C8B5;
+    border-radius: 18px;
+    background: #FBF8F3;
+    text-align: center;
+}
+
+.fg-empty-art {
+    width: 62px;
+    height: 62px;
+    display: grid;
+    place-items: center;
+    border-radius: 19px;
+    background: #F1E4CF;
+    color: #A58043;
+    font-size: 31px;
+}
+
+.fg-empty h3 {
+    margin: 4px 0 0;
+    color: var(--fg-espresso);
+    font-size: 19px;
+    letter-spacing: -0.025em;
+}
+
+.fg-empty p {
+    max-width: 470px;
+    margin: 0 0 5px;
+    color: var(--fg-muted);
+    font-size: 11px;
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   GIG LIST AND GIG CARDS
+   ========================================================= */
+
+.fg-gig-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.fg-gig-card {
+    min-width: 0;
+    display: grid;
+    grid-template-columns: 205px minmax(0, 1fr);
+    overflow: hidden;
+    border: 1px solid var(--fg-border);
+    border-radius: 17px;
+    background: var(--fg-white);
+    box-shadow: 0 5px 20px rgba(43, 29, 24, 0.035);
+}
+
+.fg-gig-art {
+    position: relative;
+    min-width: 0;
+    min-height: 235px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background: linear-gradient(145deg, #EFE2CF, #FAF6F0);
+    color: #9B7845;
+}
+
+.fg-gig-art > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.fg-gig-art > span {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 9px;
+    font-size: 38px;
+}
+
+.fg-gig-art > span small {
+    font-size: 9px;
+    font-weight: 750;
+    letter-spacing: 0.16em;
+}
+
+.fg-pdf-thumb {
+    width: 64px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    border-radius: 9px;
+    background: #F0E4D1;
+    color: #805D2B;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.fg-gig-body {
+    min-width: 0;
+    padding: 19px 21px;
+}
+
+.fg-gig-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.fg-gig-number {
+    color: #978575;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.fg-gig-body h3 {
+    margin: 12px 0 8px;
+    color: var(--fg-espresso);
+    font-size: 18px;
+    line-height: 1.4;
+    letter-spacing: -0.025em;
+    overflow-wrap: anywhere;
+}
+
+.fg-gig-description {
+    margin: 0;
+    color: #75695D;
+    font-size: 11px;
+    line-height: 1.75;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.fg-gig-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 19px;
+    margin: 17px 0 15px;
+    padding: 13px 0;
+    border-top: 1px solid #F0E8DE;
+    border-bottom: 1px solid #F0E8DE;
+}
+
+.fg-gig-meta span {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.fg-gig-meta small {
+    color: #918476;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+}
+
+.fg-gig-meta strong {
+    color: var(--fg-espresso);
+    font-size: 11px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.fg-gig-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.fg-gig-actions .fw-outline-button {
+    min-height: 37px;
+    font-size: 10px;
+}
+
+.fg-quiet-button,
+.fg-delete-button,
+.fg-remove-sample {
+    min-height: 35px;
+    padding: 8px 10px;
+    border: 0;
+    border-radius: 9px;
+    background: transparent;
+    font-size: 10px;
+    font-weight: 750;
+    cursor: pointer;
+}
+
+.fg-quiet-button {
+    color: #5E4C3D;
+}
+
+.fg-quiet-button:hover {
+    background: #F5F0E7;
+}
+
+.fg-delete-button,
+.fg-remove-sample {
+    color: var(--fg-danger);
+}
+
+.fg-delete-button:hover,
+.fg-remove-sample:hover {
+    background: #FFF0ED;
+}
+
+.fg-limit-note {
+    margin-top: 17px;
+    padding: 12px 15px;
+    border: 1px solid #E9DDC8;
+    border-radius: 10px;
+    background: #F7F0E4;
+    color: #7D6237;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   GIG EDITOR
+   ========================================================= */
+
+.fg-editor {
+    margin: 20px 0;
+    padding: 22px;
+    border: 1px solid var(--fg-border);
+    border-radius: 18px;
+    background: var(--fg-white);
+    box-shadow: 0 8px 28px rgba(43, 29, 24, 0.045);
+}
+
+.fg-editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    padding-bottom: 17px;
+    border-bottom: 1px solid #F0E8DE;
+}
+
+.fg-editor-header > div {
+    min-width: 0;
+}
+
+.fg-editor-header h2 {
+    margin: 5px 0;
+    color: var(--fg-espresso);
+    font-size: 22px;
+    letter-spacing: -0.035em;
+}
+
+.fg-editor-header p:not(.fw-eyebrow) {
+    margin: 0;
+    color: var(--fg-muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.fg-icon-button {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--fg-border);
+    border-radius: 10px;
+    background: #FBF8F4;
+    color: var(--fg-espresso);
+    font-size: 23px;
+    cursor: pointer;
+}
+
+.fg-icon-button:hover {
+    background: #F2E9DC;
+}
+
+.fg-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    margin-top: 18px;
+}
+
+.fg-inner-grid {
+    margin-top: 13px;
+}
+
+.fg-span-two {
+    grid-column: 1 / -1;
+}
+
+.fg-field {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    color: #4F4134;
+    font-size: 10px;
+    font-weight: 750;
+}
+
+.fg-field input,
+.fg-field select,
+.fg-field textarea {
+    width: 100%;
+    min-width: 0;
+    min-height: 43px;
+    box-sizing: border-box;
+    padding: 12px 13px;
+    border: 1px solid #E2D8CA;
+    border-radius: 10px;
+    outline: none;
+    background: #FFFDFB;
+    color: var(--fg-espresso);
+    font-size: 11px;
+    font-weight: 400;
+    transition: border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.fg-field textarea {
+    min-height: 125px;
+    resize: vertical;
+    line-height: 1.7;
+}
+
+.fg-field input:focus,
+.fg-field select:focus,
+.fg-field textarea:focus {
+    border-color: #B99A63;
+    box-shadow: 0 0 0 3px rgba(200, 164, 93, 0.14);
+}
+
+.fg-field small {
+    color: #877A6C;
+    font-size: 9px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.fg-price-hint {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 13px 15px;
+    border-radius: 11px;
+    background: #F7F3EC;
+    color: #695A49;
+    font-size: 10px;
+    line-height: 1.65;
+}
+
+.fg-price-hint strong {
+    color: var(--fg-espresso);
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   EXPRESS DELIVERY
+   ========================================================= */
+
+.fg-express-panel {
+    padding: 15px;
+    border: 1px solid var(--fg-border);
+    border-radius: 12px;
+    background: #FCFAF7;
+}
+
+.fg-switch-line {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.fg-switch-line input {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 16px;
+    margin: 2px 0 0;
+    accent-color: var(--fg-espresso);
+}
+
+.fg-switch-line span {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.fg-switch-line strong {
+    color: var(--fg-espresso);
+    font-size: 11px;
+}
+
+.fg-switch-line small {
+    color: var(--fg-muted);
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   SAMPLE UPLOAD
+   ========================================================= */
+
+.fg-upload-block {
+    min-width: 0;
+    padding: 16px;
+    border: 1px solid var(--fg-border);
+    border-radius: 12px;
+}
+
+.fg-upload-block > div:first-child strong {
+    color: var(--fg-espresso);
+    font-size: 12px;
+}
+
+.fg-upload-block > div:first-child p {
+    margin: 5px 0 12px;
+    color: var(--fg-muted);
+    font-size: 10px;
+    line-height: 1.65;
+}
+
+.fg-upload-drop {
+    position: relative;
+    min-height: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    padding: 15px;
+    border: 1px dashed #CFC0AC;
+    border-radius: 11px;
+    background: #FBF8F2;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.18s ease,
+    background 0.18s ease;
+}
+
+.fg-upload-drop:hover {
+    border-color: var(--fg-gold);
+    background: #FAF4E9;
+}
+
+.fg-upload-drop input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.fg-upload-drop:focus-within {
+    outline: 2px solid var(--fg-gold);
+    outline-offset: 3px;
+}
+
+.fg-upload-icon {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border-radius: 11px;
+    background: #EEE1CE;
+    color: #795B2D;
+    font-size: 20px;
+}
+
+.fg-upload-drop strong {
+    max-width: 100%;
+    color: var(--fg-espresso);
+    font-size: 11px;
+    overflow-wrap: anywhere;
+}
+
+.fg-upload-drop small {
+    color: var(--fg-muted);
+    font-size: 9px;
+}
+
+.fg-upload-preview {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 11px;
+    padding: 10px;
+    border: 1px solid #EAE1D6;
+    border-radius: 10px;
+    background: #FFF;
+}
+
+.fg-upload-preview img,
+.fg-upload-preview > .fg-pdf-thumb {
+    width: 62px;
+    height: 52px;
+    flex: 0 0 62px;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+.fg-upload-preview > div:not(.fg-pdf-thumb) {
+    min-width: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.fg-upload-preview strong {
+    color: var(--fg-espresso);
+    font-size: 10px;
+    overflow-wrap: anywhere;
+}
+
+.fg-upload-preview small {
+    color: var(--fg-muted);
+    font-size: 9px;
+}
+
+.fg-remove-sample {
+    flex: 0 0 auto;
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   EDITOR FOOTER AND ERRORS
+   ========================================================= */
+
+.fg-error {
+    margin: 15px 0 0;
+    padding: 11px 13px;
+    border: 1px solid #F0C9C3;
+    border-radius: 9px;
+    background: #FFF0ED;
+    color: #9D3529;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.fg-editor-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-top: 18px;
+    padding-top: 17px;
+    border-top: 1px solid #F0E8DE;
+}
+
+.fg-editor-footer > p {
+    max-width: 450px;
+    margin: 0;
+    color: var(--fg-muted);
+    font-size: 9px;
+    line-height: 1.65;
+}
+
+.fg-editor-footer > div {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    flex-shrink: 0;
+}
+
+.fg-editor-footer .fw-primary-button {
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   COMMISSION INFORMATION
+   ========================================================= */
+
+.fg-commission-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 25px;
+    padding: 20px;
+    border: 1px solid #E5D9C6;
+    border-radius: 15px;
+    background: #F4EEE4;
+}
+
+.fg-commission-icon {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: #E5D3B7;
+    color: #694C22;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.fg-commission-card > div:nth-child(2) {
+    min-width: 0;
+    flex: 1;
+}
+
+.fg-commission-card h3 {
+    margin: 6px 0 7px;
+    color: var(--fg-espresso);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.fg-commission-card p:not(.fw-eyebrow) {
+    margin: 0;
+    color: #71614E;
+    font-size: 10px;
+    line-height: 1.75;
+}
+
+.fg-commission-card > .fw-text-link {
+    align-self: center;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   OPTIONAL TIPS
+   ========================================================= */
+
+.fg-tip-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 14px 0 0;
+    padding: 16px;
+    border: 1px solid #ECE3D7;
+    border-radius: 13px;
+    background: var(--fg-white);
+}
+
+.fg-tip-card > span {
+    flex: 0 0 auto;
+    color: #AD8A50;
+    font-size: 24px;
+}
+
+.fg-tip-card strong {
+    color: var(--fg-espresso);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.fg-tip-card p {
+    margin: 5px 0 0;
+    color: var(--fg-muted);
+    font-size: 10px;
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   PUBLIC FREELANCER SHOWCASE
+   ========================================================= */
+
+.fg-public-page {
+    min-height: 100vh;
+    padding-bottom: 30px;
+    background: var(--fg-ivory);
+    color: var(--fg-espresso);
+}
+
+.fg-public-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    min-height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 12px clamp(18px, 5vw, 72px);
+    border-bottom: 1px solid #E9DFD3;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.fg-public-header > div {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.fg-public-hero {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 42px clamp(18px, 7vw, 100px);
+    border-bottom: 1px solid #E9DFD3;
+    background: linear-gradient(
+            120deg,
+            #EEE2D1,
+            #FBF8F3 70%
+    );
+}
+
+.fg-public-monogram {
+    width: 92px;
+    height: 92px;
+    flex: 0 0 92px;
+    display: grid;
+    place-items: center;
+    border-radius: 27px;
+    background: var(--fg-espresso);
+    color: #F0D18D;
+    font-size: 43px;
+    box-shadow: 0 10px 24px rgba(43, 29, 24, 0.14);
+}
+
+.fg-public-hero > div:nth-child(2) {
+    min-width: 0;
+}
+
+.fg-public-hero h1 {
+    margin: 5px 0 10px;
+    color: var(--fg-espresso);
+    font-size: clamp(26px, 4vw, 39px);
+    letter-spacing: -0.045em;
+}
+
+.fg-public-hero p:not(.fw-eyebrow) {
+    max-width: 720px;
+    margin: 0;
+    color: #756758;
+    font-size: 12px;
+    line-height: 1.75;
+}
+
+.fg-public-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.fg-public-badges span {
+    padding: 7px 10px;
+    border: 1px solid #E1D1BB;
+    border-radius: 99px;
+    background: rgba(255, 255, 255, 0.6);
+    color: #66533A;
+    font-size: 9px;
+    font-weight: 750;
+}
+
+.fg-public-content {
+    width: min(100% - 40px, 1200px);
+    margin: 0 auto;
+    padding: 28px 0;
+}
+
+.fg-public-count {
+    color: var(--fg-muted);
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+.fg-public-gig-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 16px;
+}
+
+.fg-public-gig-card {
+    min-width: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--fg-border);
+    border-radius: 16px;
+    background: var(--fg-white);
+    box-shadow: 0 7px 24px rgba(43, 29, 24, 0.04);
+}
+
+.fg-public-gig-art {
+    min-width: 0;
+    height: 180px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #EEE0CD, #FCF7EF);
+}
+
+.fg-public-gig-art > img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.fg-public-gig-art > .fg-pdf-thumb {
+    width: 70px;
+    height: 58px;
+}
+
+.fg-public-gig-empty {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 9px;
+    color: #A17D46;
+    font-size: 33px;
+}
+
+.fg-public-gig-empty small {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+.fg-public-gig-copy {
+    min-width: 0;
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    padding: 17px;
+}
+
+.fg-public-gig-copy h3 {
+    margin: 0;
+    color: var(--fg-espresso);
+    font-size: 16px;
+    line-height: 1.45;
+    letter-spacing: -0.025em;
+    overflow-wrap: anywhere;
+}
+
+.fg-public-gig-copy > p {
+    min-width: 0;
+    flex: 1;
+    margin: 0;
+    color: #776B5F;
+    font-size: 10px;
+    line-height: 1.75;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.fg-public-price {
+    color: var(--fg-espresso);
+    font-size: 15px;
+    font-weight: 800;
+    overflow-wrap: anywhere;
+}
+
+.fg-public-delivery {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px 0;
+    border-top: 1px solid #F0E8DE;
+    color: #716457;
+    font-size: 9px;
+    line-height: 1.6;
+}
+
+.fg-public-gig-copy .fw-primary-button {
+    width: 100%;
+    justify-content: center;
+    margin-top: 3px;
+}
+
+.fg-public-footer {
+    padding: 18px;
+    border-top: 1px solid #E9DFD3;
+    color: #837769;
+    font-size: 9px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+
+/* =========================================================
+   TABLET RESPONSIVENESS
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .fg-gig-card {
+        grid-template-columns: 170px minmax(0, 1fr);
+    }
+
+    .fg-gig-art {
+        min-height: 250px;
+    }
+
+    .fg-public-gig-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .fg-commission-card {
+        flex-wrap: wrap;
+    }
+
+    .fg-commission-card > .fw-text-link {
+        margin-left: 60px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE APPLICATION LAYOUT
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .fg-capacity-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+        padding: 15px;
+        margin: 17px 0 14px;
+    }
+
+    .fg-capacity-row > div:first-child {
+        gap: 10px;
+    }
+
+    .fg-capacity-icon {
+        width: 38px;
+        height: 38px;
+        flex-basis: 38px;
+    }
+
+    .fg-capacity-row strong {
+        font-size: 11px;
+    }
+
+    .fg-capacity-row p {
+        font-size: 9px;
+    }
+
+    .fg-capacity-bars {
+        width: 100%;
+        gap: 7px;
+    }
+
+    .fg-capacity-bars span {
+        flex: 1;
+        height: 6px;
+    }
+
+
+    /* PAYMENT NOTICE */
+    .fg-policy {
+        gap: 9px;
+        margin: 14px 0;
+        padding: 12px;
+        border-radius: 11px;
+    }
+
+    .fg-policy > span {
+        width: 30px;
+        height: 30px;
+        flex-basis: 30px;
+        font-size: 16px;
+    }
+
+    .fg-policy strong {
+        font-size: 10px;
+    }
+
+    .fg-policy p {
+        font-size: 9px;
+    }
+
+    .fg-policy.is-compact {
+        display: none;
+    }
+
+
+    /* GIG HEADER */
+    .fg-gigs-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        margin: 22px 0 14px;
+    }
+
+    .fg-gigs-header h2 {
+        font-size: 19px;
+    }
+
+    .fg-gigs-header p:not(.fw-eyebrow) {
+        font-size: 10px;
+    }
+
+    .fg-gigs-header > .fw-primary-button {
+        width: 100%;
+    }
+
+
+    /* EMPTY STATE */
+    .fg-empty {
+        gap: 10px;
+        padding: 37px 17px;
+        border-radius: 14px;
+    }
+
+    .fg-empty-art {
+        width: 54px;
+        height: 54px;
+        font-size: 26px;
+    }
+
+    .fg-empty h3 {
+        font-size: 17px;
+    }
+
+    .fg-empty p {
+        font-size: 10px;
+    }
+
+
+    /* GIG CARDS */
+    .fg-gig-list {
+        gap: 13px;
+    }
+
+    .fg-gig-card {
+        grid-template-columns: minmax(0, 1fr);
+        border-radius: 14px;
+    }
+
+    .fg-gig-art {
+        width: 100%;
+        min-height: 0;
+        height: 180px;
+        max-height: 220px;
+    }
+
+    .fg-gig-art > span {
+        font-size: 32px;
+    }
+
+    .fg-gig-body {
+        padding: 15px;
+    }
+
+    .fg-gig-body h3 {
+        margin: 10px 0 7px;
+        font-size: 16px;
+    }
+
+    .fg-gig-description {
+        font-size: 10px;
+    }
+
+    .fg-gig-meta {
+        gap: 13px;
+        margin: 14px 0;
+        padding: 12px 0;
+    }
+
+    .fg-gig-meta span {
+        flex: 1 1 100px;
+    }
+
+    .fg-gig-meta small {
+        font-size: 7px;
+    }
+
+    .fg-gig-meta strong {
+        font-size: 10px;
+    }
+
+    .fg-gig-actions {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .fg-gig-actions > * {
+        min-width: 0;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .fg-gig-actions > .fw-outline-button {
+        grid-column: 1 / -1;
+        width: 100%;
+    }
+
+    .fg-quiet-button,
+    .fg-delete-button {
+        min-height: 40px;
+        border: 1px solid var(--fg-border);
+        background: #FCFAF7;
+    }
+
+    .fg-limit-note {
+        padding: 11px 12px;
+        font-size: 9px;
+    }
+
+
+    /* GIG EDITOR */
+    .fg-editor {
+        margin: 16px 0;
+        padding: 15px;
+        border-radius: 14px;
+    }
+
+    .fg-editor-header {
+        gap: 9px;
+        padding-bottom: 13px;
+    }
+
+    .fg-editor-header h2 {
+        font-size: 19px;
+    }
+
+    .fg-editor-header p:not(.fw-eyebrow) {
+        font-size: 10px;
+    }
+
+    .fg-icon-button {
+        width: 34px;
+        height: 34px;
+        flex-basis: 34px;
+    }
+
+    .fg-form-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 13px;
+        margin-top: 15px;
+    }
+
+    .fg-span-two {
+        grid-column: auto;
+    }
+
+    .fg-field {
+        font-size: 10px;
+    }
+
+    .fg-field input,
+    .fg-field select,
+    .fg-field textarea {
+        min-height: 46px;
+        padding: 12px;
+        font-size: 12px;
+        border-radius: 9px;
+    }
+
+    .fg-field textarea {
+        min-height: 125px;
+    }
+
+    .fg-field small {
+        font-size: 9px;
+    }
+
+    .fg-price-hint {
+        padding: 12px;
+        font-size: 9px;
+    }
+
+    .fg-express-panel {
+        padding: 12px;
+    }
+
+    .fg-switch-line strong {
+        font-size: 10px;
+    }
+
+    .fg-switch-line small {
+        font-size: 9px;
+    }
+
+    .fg-express-panel .fg-inner-grid {
+        grid-template-columns: minmax(0, 1fr);
+        margin-top: 14px;
+    }
+
+
+    /* UPLOAD AREA */
+    .fg-upload-block {
+        padding: 12px;
+    }
+
+    .fg-upload-block > div:first-child strong {
+        font-size: 11px;
+    }
+
+    .fg-upload-block > div:first-child p {
+        font-size: 9px;
+    }
+
+    .fg-upload-drop {
+        min-height: 120px;
+        padding: 12px;
+    }
+
+    .fg-upload-drop strong {
+        font-size: 10px;
+    }
+
+    .fg-upload-drop small {
+        font-size: 8px;
+    }
+
+    .fg-upload-preview {
+        flex-wrap: wrap;
+        gap: 9px;
+        padding: 9px;
+    }
+
+    .fg-upload-preview img,
+    .fg-upload-preview > .fg-pdf-thumb {
+        width: 52px;
+        height: 48px;
+        flex-basis: 52px;
+    }
+
+    .fg-upload-preview > div:not(.fg-pdf-thumb) {
+        flex: 1 1 calc(100% - 75px);
+    }
+
+    .fg-upload-preview strong {
+        font-size: 9px;
+    }
+
+    .fg-remove-sample {
+        margin-left: auto;
+        min-height: 34px;
+    }
+
+
+    /* EDITOR FOOTER */
+    .fg-editor-footer {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 13px;
+        margin-top: 15px;
+        padding-top: 14px;
+    }
+
+    .fg-editor-footer > p {
+        max-width: none;
+        font-size: 9px;
+    }
+
+    .fg-editor-footer > div {
+        width: 100%;
+        display: grid;
+        grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+        gap: 8px;
+    }
+
+    .fg-editor-footer > div > button {
+        min-width: 0;
+        padding: 10px 8px;
+        font-size: 10px;
+    }
+
+
+    /* COMMISSION AND TIPS */
+    .fg-commission-card {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 11px;
+        margin-top: 19px;
+        padding: 15px;
+    }
+
+    .fg-commission-icon {
+        width: 38px;
+        height: 38px;
+        flex-basis: 38px;
+    }
+
+    .fg-commission-card > div:nth-child(2) {
+        flex: 1 1 calc(100% - 55px);
+    }
+
+    .fg-commission-card h3 {
+        font-size: 12px;
+    }
+
+    .fg-commission-card p:not(.fw-eyebrow) {
+        font-size: 9px;
+    }
+
+    .fg-commission-card > .fw-text-link {
+        margin-left: 49px;
+        font-size: 9px;
+    }
+
+    .fg-tip-card {
+        padding: 13px;
+    }
+
+    .fg-tip-card strong {
+        font-size: 10px;
+    }
+
+    .fg-tip-card p {
+        font-size: 9px;
+    }
+
+
+    /* PUBLIC SHOWCASE */
+    .fg-public-page {
+        min-height: 100dvh;
+        padding-bottom: calc(20px + env(safe-area-inset-bottom));
+    }
+
+    .fg-public-header {
+        min-height: 62px;
+        gap: 8px;
+        padding: 9px 14px;
+    }
+
+    .fg-public-header > div {
+        gap: 6px;
+    }
+
+    .fg-public-header .fw-primary-button,
+    .fg-public-header .fw-outline-button {
+        min-height: 36px;
+        padding: 8px 10px;
+        font-size: 9px;
+    }
+
+    .fg-public-hero {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+        padding: 26px 18px;
+    }
+
+    .fg-public-monogram {
+        width: 67px;
+        height: 67px;
+        flex-basis: 67px;
+        border-radius: 19px;
+        font-size: 32px;
+    }
+
+    .fg-public-hero h1 {
+        font-size: 26px;
+    }
+
+    .fg-public-hero p:not(.fw-eyebrow) {
+        font-size: 10px;
+    }
+
+    .fg-public-badges {
+        gap: 6px;
+        margin-top: 12px;
+    }
+
+    .fg-public-badges span {
+        padding: 6px 8px;
+        font-size: 8px;
+    }
+
+    .fg-public-content {
+        width: calc(100% - 30px);
+        padding: 22px 0;
+    }
+
+    .fg-public-content .fg-gigs-header {
+        align-items: flex-start;
+        flex-direction: row;
+        gap: 9px;
+    }
+
+    .fg-public-content .fg-gigs-header h2 {
+        font-size: 17px;
+    }
+
+    .fg-public-count {
+        font-size: 9px;
+    }
+
+    .fg-public-gig-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 13px;
+    }
+
+    .fg-public-gig-card {
+        border-radius: 14px;
+    }
+
+    .fg-public-gig-art {
+        height: 190px;
+    }
+
+    .fg-public-gig-copy {
+        gap: 9px;
+        padding: 15px;
+    }
+
+    .fg-public-gig-copy h3 {
+        font-size: 15px;
+    }
+
+    .fg-public-gig-copy > p {
+        font-size: 10px;
+    }
+
+    .fg-public-price {
+        font-size: 14px;
+    }
+
+    .fg-public-delivery {
+        font-size: 9px;
+    }
+
+    .fg-public-footer {
+        padding: 15px;
+        font-size: 8px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE DEVICES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .fg-capacity-bars {
+        gap: 5px;
+    }
+
+    .fg-gig-body {
+        padding: 12px;
+    }
+
+    .fg-gig-card-top {
+        align-items: flex-start;
+    }
+
+    .fg-gig-number {
+        font-size: 8px;
+    }
+
+    .fg-gig-body h3 {
+        font-size: 15px;
+    }
+
+    .fg-gig-meta {
+        gap: 10px;
+    }
+
+    .fg-editor {
+        padding: 12px;
+    }
+
+    .fg-editor-header h2 {
+        font-size: 17px;
+    }
+
+    .fg-public-header {
+        padding: 9px 10px;
+    }
+
+    .fg-public-header > div {
+        gap: 4px;
+    }
+
+    .fg-public-header .fw-primary-button,
+    .fg-public-header .fw-outline-button {
+        padding: 8px 7px;
+        font-size: 8px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .fg-gig-card,
+    .fg-upload-drop,
+    .fg-quiet-button,
+    .fg-delete-button {
+        transition: none !important;
+    }
+}
+
+
+/* =========================================================
+   WORKLY - BASIC, STANDARD AND PREMIUM PACKAGES
+   ========================================================= */
+
+.fg-package-section {
+    margin: 26px 0;
+}
+
+.fg-package-section-heading {
+    margin-bottom: 17px;
+}
+
+.fg-package-section-heading h3 {
+    margin: 5px 0 8px;
+    color: var(--fg-espresso);
+    font-size: 21px;
+    letter-spacing: -0.035em;
+}
+
+.fg-package-section-heading > p:last-child {
+    max-width: 680px;
+    margin: 0;
+    color: var(--fg-muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.fg-package-editor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 13px;
+}
+
+.fg-package-editor-card {
+    min-width: 0;
+    padding: 17px;
+    border: 1px solid var(--fg-border);
+    border-radius: 14px;
+    background: #FFFEFC;
+}
+
+.fg-package-standard {
+    border-color: #D8C295;
+    background: #FCF9F2;
+}
+
+.fg-package-premium {
+    border-color: #B99B6C;
+    background: #F8F3E9;
+}
+
+.fg-package-editor-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--fg-border);
+}
+
+.fg-package-label {
+    color: var(--fg-espresso);
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.fg-package-recommended {
+    padding: 5px 7px;
+    border-radius: 5px;
+    background: #E9D9B8;
+    color: #745324;
+    font-size: 7px;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+}
+
+.fg-package-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.fg-package-fields .fg-field {
+    margin: 0;
+}
+
+.fg-package-fields .fg-field textarea {
+    min-height: 87px;
+}
+
+.fg-package-helper {
+    margin: 13px 0 0;
+    color: #8B7B68;
+    font-size: 9px;
+    line-height: 1.6;
+}
+
+.fg-gig-package-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 15px 0;
+    padding: 12px;
+    border: 1px solid #EEE5D8;
+    border-radius: 10px;
+    background: #FCFAF6;
+}
+
+.fg-gig-package-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    color: #776858;
+    font-size: 10px;
+}
+
+.fg-gig-package-line strong {
+    color: var(--fg-espresso);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   CLIENT-FACING PACKAGE COMPARISON
+   ========================================================= */
+
+.fg-public-package-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 9px;
+    margin-top: 13px;
+}
+
+.fg-public-package-card {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    border: 1px solid var(--fg-border);
+    border-radius: 11px;
+    background: #FFFEFC;
+}
+
+.fg-public-package-standard {
+    border-color: #D5BC8D;
+    background: #FCF8EF;
+}
+
+.fg-public-package-premium {
+    border-color: #A98A59;
+    background: #F5EDDE;
+}
+
+.fg-public-package-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 5px;
+    min-height: 26px;
+}
+
+.fg-public-package-heading strong {
+    color: var(--fg-espresso);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.fg-public-package-heading span {
+    color: #987139;
+    font-size: 7px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+}
+
+.fg-public-package-price {
+    margin: 10px 0;
+    color: var(--fg-espresso);
+    font-size: clamp(15px, 1.8vw, 21px);
+    font-weight: 850;
+    letter-spacing: -0.035em;
+    overflow-wrap: anywhere;
+}
+
+.fg-public-package-description {
+    min-height: 55px;
+    margin: 0 0 11px;
+    color: #776B5F;
+    font-size: 9px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.fg-public-package-facts {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px 0;
+    border-top: 1px solid #EAE1D6;
+    border-bottom: 1px solid #EAE1D6;
+    color: #6E5E4D;
+    font-size: 8px;
+    line-height: 1.5;
+}
+
+.fg-public-package-card ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    margin: 12px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.fg-public-package-card li {
+    position: relative;
+    padding-left: 14px;
+    color: #6D6052;
+    font-size: 8px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.fg-public-package-card li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #94713B;
+    font-weight: 800;
+}
+
+.fg-public-package-card .fw-primary-button,
+.fg-public-package-card .fw-outline-button {
+    width: 100%;
+    min-width: 0;
+    min-height: 37px;
+    padding: 8px 5px;
+    border-radius: 8px;
+    font-size: 8px;
+    line-height: 1.3;
+}
+
+.fg-public-express-note {
+    width: 100%;
+    margin-top: 12px;
+    padding: 10px 11px;
+    border: 1px solid #E9D9BC;
+    border-radius: 9px;
+    background: #FBF5EA;
+    color: #745A35;
+    font-size: 9px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   PACKAGE EDITOR - TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+    .fg-package-editor-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .fg-package-premium {
+        grid-column: 1 / -1;
+    }
+
+    .fg-public-package-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   PACKAGE EDITOR - MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+    .fg-package-section {
+        margin: 21px 0;
+    }
+
+    .fg-package-section-heading {
+        margin-bottom: 13px;
+    }
+
+    .fg-package-section-heading h3 {
+        font-size: 18px;
+    }
+
+    .fg-package-section-heading > p:last-child {
+        font-size: 10px;
+    }
+
+    .fg-package-editor-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .fg-package-editor-card {
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    .fg-package-standard,
+    .fg-package-premium {
+        grid-column: auto;
+    }
+
+    .fg-package-editor-heading {
+        margin-bottom: 12px;
+    }
+
+    .fg-package-label {
+        font-size: 14px;
+    }
+
+    .fg-package-fields {
+        gap: 12px;
+    }
+
+    .fg-package-fields .fg-field textarea {
+        min-height: 85px;
+    }
+
+    .fg-package-helper {
+        font-size: 9px;
+    }
+
+    .fg-gig-package-summary {
+        gap: 9px;
+        padding: 11px;
+    }
+
+    .fg-gig-package-line {
+        font-size: 9px;
+    }
+
+    .fg-gig-package-line strong {
+        font-size: 10px;
+    }
+
+
+    /* Client package comparison becomes vertically stacked. */
+    .fg-public-package-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+        margin-top: 12px;
+    }
+
+    .fg-public-package-card {
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    .fg-public-package-heading strong {
+        font-size: 13px;
+    }
+
+    .fg-public-package-heading span {
+        font-size: 8px;
+    }
+
+    .fg-public-package-price {
+        margin: 8px 0;
+        font-size: 21px;
+    }
+
+    .fg-public-package-description {
+        min-height: 0;
+        font-size: 10px;
+    }
+
+    .fg-public-package-facts {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 12px;
+        font-size: 9px;
+    }
+
+    .fg-public-package-card ul {
+        gap: 8px;
+        margin: 11px 0;
+    }
+
+    .fg-public-package-card li {
+        font-size: 9px;
+    }
+
+    .fg-public-package-card .fw-primary-button,
+    .fg-public-package-card .fw-outline-button {
+        min-height: 43px;
+        font-size: 10px;
+    }
+
+    .fg-public-express-note {
+        font-size: 9px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE SCREENS
+   ========================================================= */
+
+@media (max-width: 380px) {
+    .fg-package-editor-card {
+        padding: 12px;
+    }
+
+    .fg-package-fields {
+        gap: 10px;
+    }
+
+    .fg-public-package-card {
+        padding: 12px;
+    }
+
+    .fg-public-package-price {
+        font-size: 19px;
+    }
+}
+
+
+/* WORKLY EMPTY STATE — FINAL LAYOUT CORRECTION */
+
+.fg-empty {
+    display: grid !important;
+    grid-template-columns: minmax(180px, 250px) minmax(0, 1fr) !important;
+    grid-template-rows: auto auto auto !important;
+    align-items: center !important;
+    justify-items: stretch !important;
+    column-gap: 36px !important;
+    row-gap: 13px !important;
+    text-align: left !important;
+}
+
+.fg-empty-art {
+    grid-column: 1 !important;
+    grid-row: 1 / 4 !important;
+    width: 100% !important;
+    height: 190px !important;
+    margin: 0 !important;
+    position: relative;
+    z-index: 1;
+}
+
+.fg-empty-art::before {
+    width: 100px !important;
+    height: 125px !important;
+}
+
+.fg-empty h3 {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    align-self: end;
+    position: relative;
+    z-index: 2;
+}
+
+.fg-empty p {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+    align-self: start;
+    margin: 0 !important;
+}
+
+.fg-empty > .fw-primary-button {
+    grid-column: 2 !important;
+    grid-row: 3 !important;
+    justify-self: start !important;
+    align-self: start;
+}
+
+@media (max-width: 760px) {
+    .fg-empty {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: auto auto auto auto !important;
+        justify-items: center !important;
+        text-align: center !important;
+        gap: 15px !important;
+    }
+
+    .fg-empty-art {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        width: min(220px, 100%) !important;
+        height: 145px !important;
+    }
+
+    .fg-empty-art::before {
+        width: 82px !important;
+        height: 100px !important;
+    }
+
+    .fg-empty h3 {
+        grid-column: 1 !important;
+        grid-row: 2 !important;
+    }
+
+    .fg-empty p {
+        grid-column: 1 !important;
+        grid-row: 3 !important;
+    }
+
+    .fg-empty > .fw-primary-button {
+        grid-column: 1 !important;
+        grid-row: 4 !important;
+        justify-self: center !important;
+    }
+}

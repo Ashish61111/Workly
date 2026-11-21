@@ -1,0 +1,319 @@
+
+.order-confirmation-page {
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    min-height: 0;
+
+    display: flex;
+    justify-content: center;
+
+    overflow: hidden;
+    background: #E7DED3;
+    color: #2B1D18;
+}
+
+.order-confirmation-page,
+.order-confirmation-page * {
+    box-sizing: border-box;
+}
+
+.order-confirmation-shell {
+    width: 100%;
+    max-width: 680px;
+    height: 100%;
+    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+    background: #F7F3ED;
+    box-shadow: 0 0 30px rgb(43 29 24 / 8%);
+}
+
+.order-confirmation-header {
+    flex: 0 0 auto;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 14px 20px;
+    border-bottom: 1px solid #E7DED3;
+}
+
+.order-confirmation-page .brand-badge.order-confirmation-logo {
+    position: relative;
+    flex: 0 0 auto;
+    align-self: center;
+    margin: 0;
+    transform: none;
+}
+
+.order-confirmation-header > div {
+    min-width: 0;
+}
+
+.order-confirmation-header p {
+    margin: 0 0 4px;
+
+    color: #8B7869;
+    font: 700 0.61rem Arial, Helvetica, sans-serif;
+    letter-spacing: 0.13em;
+}
+
+.order-confirmation-header h1 {
+    margin: 0;
+
+    color: #2B1D18;
+    font: 400 clamp(1.3rem, 4vw, 1.8rem) "Bodoni 72", Didot, Georgia, serif;
+}
+
+.order-confirmation-content {
+    flex: 1;
+    min-height: 0;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    padding: 25px 22px;
+    scrollbar-color: #D9C9B8 transparent;
+    scrollbar-width: thin;
+}
+
+.order-success-card {
+    padding: 25px 18px;
+
+    text-align: center;
+    background: #FFFEFC;
+    border: 1px solid #E6D9CA;
+    border-radius: 17px;
+}
+
+.order-success-icon {
+    width: 57px;
+    height: 57px;
+
+    display: grid;
+    place-items: center;
+
+    margin: 0 auto 17px;
+
+    color: #FFF9F1;
+    background: #557D58;
+    border-radius: 50%;
+}
+
+.order-success-icon svg {
+    width: 28px;
+    height: 28px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.order-confirmation-eyebrow {
+    margin: 0;
+
+    color: #9A7435;
+    font: 700 0.64rem Arial, Helvetica, sans-serif;
+    letter-spacing: 0.13em;
+    line-height: 1.55;
+}
+
+.order-success-card h2 {
+    max-width: 430px;
+    margin: 10px auto;
+
+    color: #2B1D18;
+    font: 400 clamp(1.8rem, 5vw, 2.4rem) "Bodoni 72", Didot, Georgia, serif;
+    line-height: 1.15;
+}
+
+.order-success-card > p:not(.order-confirmation-eyebrow) {
+    max-width: 400px;
+    margin: 12px auto;
+
+    color: #75665D;
+    font: 0.83rem/1.7 Arial, Helvetica, sans-serif;
+}
+
+.order-reference {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 8px 11px;
+
+    color: #60451F;
+    background: #F5EAD7;
+    border: 1px solid #E5D3B4;
+    border-radius: 8px;
+
+    font: 700 0.72rem Arial, Helvetica, sans-serif;
+    overflow-wrap: anywhere;
+}
+
+.order-confirmation-summary {
+    margin-top: 18px;
+    padding: 20px 17px;
+
+    background: #FFFEFC;
+    border: 1px solid #E6D9CA;
+    border-radius: 15px;
+}
+
+.order-confirmation-summary h2 {
+    margin: 7px 0 14px;
+
+    color: #2B1D18;
+    font: 400 1.7rem "Bodoni 72", Didot, Georgia, serif;
+}
+
+.order-summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 14px;
+
+    padding: 12px 0;
+    border-bottom: 1px solid #EDE4D9;
+
+    font: 0.77rem/1.55 Arial, Helvetica, sans-serif;
+}
+
+.order-summary-row > span {
+    color: #75665D;
+}
+
+.order-summary-row > strong {
+    max-width: 62%;
+    color: #2B1D18;
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+.order-confirmation-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    padding-top: 17px;
+
+    color: #2B1D18;
+    font: 700 0.79rem/1.5 Arial, Helvetica, sans-serif;
+}
+
+.order-confirmation-total strong {
+    font-size: 1.2rem;
+    white-space: nowrap;
+}
+
+.order-demo-disclaimer {
+    margin-top: 16px;
+    padding: 14px;
+
+    color: #785923;
+    background: #F8EFD9;
+    border: 1px solid #E9D6A9;
+    border-radius: 11px;
+}
+
+.order-demo-disclaimer strong {
+    font: 700 0.79rem Arial, Helvetica, sans-serif;
+}
+
+.order-demo-disclaimer p {
+    margin: 7px 0 0;
+
+    font: 0.73rem/1.7 Arial, Helvetica, sans-serif;
+}
+
+.order-confirmation-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+.order-confirmation-primary,
+.order-confirmation-secondary {
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 15px;
+
+    border-radius: 10px;
+    font: 700 0.78rem Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+.order-confirmation-primary {
+    color: #FFF9F1;
+    background: #2B1D18;
+    border: 1px solid #2B1D18;
+}
+
+.order-confirmation-primary:hover {
+    color: #2B1D18;
+    background: #D7B45F;
+    border-color: #D7B45F;
+}
+
+.order-confirmation-secondary {
+    color: #60451F;
+    background: #F5EAD7;
+    border: 1px solid #E5D3B4;
+}
+
+.order-confirmation-secondary:hover {
+    background: #EEDAB6;
+}
+
+.order-not-found {
+    text-align: center;
+}
+
+.order-not-found h2 {
+    color: #2B1D18;
+    font: 400 2rem "Bodoni 72", Didot, Georgia, serif;
+}
+
+.order-not-found > p {
+    color: #75665D;
+    font: 0.83rem/1.7 Arial, Helvetica, sans-serif;
+}
+
+.order-not-found .order-confirmation-primary {
+    margin-top: 12px;
+}
+
+.order-confirmation-page button:focus-visible {
+    outline: 2px solid #B58D49;
+    outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+    .order-confirmation-header {
+        gap: 10px;
+        padding: 12px 14px;
+    }
+
+    .order-confirmation-content {
+        padding: 17px 13px;
+    }
+
+    .order-success-card {
+        padding: 22px 14px;
+    }
+
+    .order-confirmation-summary {
+        padding: 16px 12px;
+    }
+
+    .order-summary-row {
+        font-size: 0.72rem;
+    }
+}

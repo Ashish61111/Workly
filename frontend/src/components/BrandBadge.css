@@ -1,0 +1,43 @@
+.brand-badge {
+    position: relative;
+    display: inline-grid;
+    place-items: center;
+    flex: 0 0 auto;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background: #2B1D18;
+}
+
+/* Monogram scales with the badge */
+.brand-badge-monogram {
+    position: absolute;
+    left: 50%;
+    top: 52%;
+
+    color: #FFF9F1;
+    font-family: "Bodoni 72", Didot, Georgia, serif;
+    font-size: 0.36em;
+    font-weight: 400;
+    letter-spacing: -0.045em;
+    line-height: 1;
+    white-space: nowrap;
+
+    transform: translate(-50%, -50%) translate(1px, 0);
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Star scales independently and stays near the upper-right */
+.brand-badge-star {
+    position: absolute;
+    top: 18%;
+    right: 15%;
+
+    color: #C8A45D;
+    font-family: Georgia, serif;
+    font-size: 0.18em;
+    line-height: 1;
+
+    pointer-events: none;
+    user-select: none;
+}

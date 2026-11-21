@@ -1,0 +1,1063 @@
+
+.freelancer-page {
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    min-height: 0;
+
+    display: flex;
+    justify-content: center;
+
+    overflow: hidden;
+    background: #E7DED3;
+    color: #2B1D18;
+}
+
+.freelancer-page,
+.freelancer-page * {
+    box-sizing: border-box;
+}
+
+.freelancer-shell {
+    width: 100%;
+    max-width: 680px;
+    height: 100%;
+    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+    background: #F7F3ED;
+    box-shadow: 0 0 30px rgb(43 29 24 / 8%);
+}
+
+.freelancer-header {
+    flex: 0 0 auto;
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 13px 18px;
+    border-bottom: 1px solid #E7DED3;
+    background: #F7F3ED;
+}
+
+.freelancer-page .brand-badge.freelancer-brand-badge {
+    position: relative;
+    flex: 0 0 auto;
+    align-self: center;
+    transform: none;
+    margin: 0;
+}
+
+.freelancer-back-button {
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+
+    display: grid;
+    place-items: center;
+
+    padding: 0;
+    color: #2B1D18;
+    background: #FFFEFC;
+    border: 1px solid #D9C9B8;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.freelancer-back-button svg {
+    width: 17px;
+    height: 17px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.freelancer-header-copy {
+    flex: 1;
+    min-width: 0;
+}
+
+.freelancer-header-copy p {
+    margin: 0 0 3px;
+
+    color: #8B7869;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+}
+
+.freelancer-header-copy h1 {
+    margin: 0;
+
+    color: #2B1D18;
+    font-family: "Bodoni 72", Didot, "Bodoni MT", Georgia, serif;
+    font-size: clamp(1.25rem, 4vw, 1.7rem);
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+.freelancer-content {
+    flex: 1;
+    min-height: 0;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    padding: 18px 21px 27px;
+    scrollbar-width: thin;
+    scrollbar-color: #D9C9B8 transparent;
+}
+
+.freelancer-breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+
+    margin-bottom: 16px;
+
+    color: #8B7869;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.65rem;
+    line-height: 1.6;
+}
+
+.freelancer-breadcrumb button {
+    padding: 0;
+    color: #8A672E;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+}
+
+.freelancer-breadcrumb button:hover {
+    text-decoration: underline;
+}
+
+.freelancer-hero-card {
+    overflow: hidden;
+    background: #FFFEFC;
+    border: 1px solid #E6D9CA;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgb(43 29 24 / 4%);
+}
+
+
+.freelancer-cover {
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+    isolation: isolate;
+
+    background: radial-gradient(
+            circle at 85% 20%,
+            rgb(200 164 93 / 28%),
+            transparent 28%
+    ),
+    radial-gradient(
+            circle at 65% 120%,
+            rgb(200 164 93 / 18%),
+            transparent 38%
+    ),
+    linear-gradient(
+            115deg,
+            #2B1D18 0%,
+            #493328 52%,
+            #735638 100%
+    );
+}
+
+/* Subtle decorative rings on the default cover */
+.freelancer-cover::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    width: 230px;
+    height: 230px;
+    top: -145px;
+    right: -35px;
+
+    border: 1px solid rgb(200 164 93 / 55%);
+    border-radius: 50%;
+    box-shadow: 0 0 0 20px rgb(200 164 93 / 7%),
+    0 0 0 42px rgb(200 164 93 / 5%);
+}
+
+.freelancer-cover::after {
+    content: "✦";
+    position: absolute;
+    top: 25px;
+    right: 28px;
+
+    color: #D7B45F;
+    font-size: 25px;
+    line-height: 1;
+}
+
+/* Display a user-provided cover when one exists */
+.freelancer-cover.has-cover-image {
+    background: #E7DED3;
+}
+
+.freelancer-cover.has-cover-image::before,
+.freelancer-cover.has-cover-image::after {
+    display: none;
+}
+
+.freelancer-cover > img {
+    position: absolute;
+    inset: 0;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.freelancer-cover-label {
+    position: absolute;
+    left: 16px;
+    bottom: 13px;
+    z-index: 1;
+
+    color: #FFF9F1;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+.freelancer-hero-body {
+    display: grid;
+    grid-template-columns: 78px minmax(0, 1fr);
+    gap: 16px;
+
+    padding: 0 20px 20px;
+}
+
+.freelancer-avatar {
+    position: relative;
+
+    width: 78px;
+    height: 78px;
+    margin-top: -30px;
+    z-index: 2;
+
+    display: grid;
+    place-items: center;
+
+    color: #604A36;
+    background: #F0E2CA;
+    border: 4px solid #FFFEFC;
+    border-radius: 50%;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.freelancer-verified {
+    position: absolute;
+    right: -1px;
+    bottom: 0;
+
+    width: 23px;
+    height: 23px;
+
+    display: grid;
+    place-items: center;
+
+    color: #FFF9F1;
+    background: #8A672E;
+    border: 2px solid #FFFEFC;
+    border-radius: 50%;
+}
+
+.freelancer-verified svg {
+    width: 13px;
+    height: 13px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.freelancer-hero-details {
+    min-width: 0;
+    padding-top: 17px;
+}
+
+.freelancer-name-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.freelancer-name-row > div {
+    min-width: 0;
+}
+
+.freelancer-eyebrow {
+    margin: 0;
+
+    color: #9A7435;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.59rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    line-height: 1.55;
+}
+
+.freelancer-name-row h2 {
+    margin: 5px 0;
+
+    overflow-wrap: anywhere;
+    color: #2B1D18;
+    font-family: "Bodoni 72", Didot, "Bodoni MT", Georgia, serif;
+    font-size: clamp(1.45rem, 4vw, 1.9rem);
+    font-weight: 400;
+    line-height: 1.08;
+}
+
+.freelancer-role {
+    margin: 0;
+
+    color: #75665D;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.77rem;
+    line-height: 1.5;
+}
+
+.freelancer-save-button {
+    flex: 0 0 auto;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    padding: 8px 10px;
+
+    color: #60451F;
+    background: #F7F3ED;
+    border: 1px solid #D9C9B8;
+    border-radius: 9px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.68rem;
+    cursor: pointer;
+}
+
+.freelancer-save-button > span {
+    font-size: 1rem;
+}
+
+.freelancer-save-button:hover,
+.freelancer-save-button.saved {
+    color: #8A672E;
+    background: #F5EAD7;
+    border-color: #C8A45D;
+}
+
+.freelancer-status-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+
+    margin-top: 13px;
+
+    color: #75665D;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.68rem;
+}
+
+.freelancer-availability-dot {
+    width: 8px;
+    height: 8px;
+
+    background: #608B63;
+    border-radius: 50%;
+}
+
+.freelancer-status-divider {
+    color: #B5A392;
+}
+
+.freelancer-about {
+    margin: 13px 0;
+
+    color: #75665D;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.78rem;
+    line-height: 1.75;
+}
+
+.freelancer-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.freelancer-primary-button,
+.freelancer-secondary-button {
+    min-height: 41px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 10px 13px;
+
+    border-radius: 9px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.freelancer-primary-button {
+    color: #FFF9F1;
+    background: #2B1D18;
+    border: 1px solid #2B1D18;
+}
+
+.freelancer-primary-button:hover {
+    color: #2B1D18;
+    background: #D7B45F;
+    border-color: #D7B45F;
+}
+
+.freelancer-secondary-button {
+    color: #60451F;
+    background: #F5EAD7;
+    border: 1px solid #E5D3B4;
+}
+
+.freelancer-secondary-button:hover {
+    background: #EEDAB6;
+}
+
+.freelancer-notice {
+    margin: 12px 0 0;
+    padding: 10px;
+
+    color: #785923;
+    background: #F8EFD9;
+    border: 1px solid #E9D6A9;
+    border-radius: 8px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.71rem;
+    line-height: 1.6;
+}
+
+.freelancer-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 9px;
+
+    margin-top: 15px;
+}
+
+.freelancer-stats > div {
+    min-width: 0;
+    min-height: 98px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+
+    padding: 12px 10px;
+
+    background: #FFFEFC;
+    border: 1px solid #E6D9CA;
+    border-radius: 12px;
+}
+
+.freelancer-stat-icon {
+    min-height: 18px;
+
+    display: inline-flex;
+    align-items: center;
+    color: #A67F3F;
+
+    font-size: 1.05rem;
+}
+
+.freelancer-stat-icon svg {
+    width: 17px;
+    height: 17px;
+
+    fill: #C8A45D;
+    stroke: #C8A45D;
+}
+
+.freelancer-stats strong {
+    color: #2B1D18;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.84rem;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+.freelancer-stats > div > span:last-child {
+    color: #8B7869;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.61rem;
+    line-height: 1.4;
+}
+
+.freelancer-section {
+    margin-top: 27px;
+}
+
+.freelancer-section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+
+    margin-bottom: 14px;
+}
+
+.freelancer-section-heading h2,
+.freelancer-review-section h2 {
+    margin: 5px 0 0;
+
+    color: #2B1D18;
+    font-family: "Bodoni 72", Didot, "Bodoni MT", Georgia, serif;
+    font-size: 1.65rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.freelancer-section-heading > span:last-child {
+    color: #C8A45D;
+}
+
+.freelancer-section-note {
+    color: #8B7869;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.66rem;
+}
+
+.freelancer-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.freelancer-skills > span {
+    padding: 8px 11px;
+
+    color: #60451F;
+    background: #F5EAD7;
+    border: 1px solid #E5D3B4;
+    border-radius: 20px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.7rem;
+}
+
+.freelancer-portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 11px;
+}
+
+.freelancer-project-card {
+    min-width: 0;
+    overflow: hidden;
+
+    background: #FFFEFC;
+    border: 1px solid #E6D9CA;
+    border-radius: 12px;
+}
+
+.freelancer-project-image {
+    aspect-ratio: 1.05 / 1;
+    overflow: hidden;
+    background: #30206A;
+}
+
+.freelancer-project-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition: transform 180ms ease;
+}
+
+.freelancer-project-card:hover img {
+    transform: scale(1.035);
+}
+
+.freelancer-project-copy {
+    padding: 10px;
+}
+
+.freelancer-project-copy h3 {
+    margin: 0 0 5px;
+
+    color: #2B1D18;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.74rem;
+    line-height: 1.4;
+}
+
+.freelancer-project-copy > span {
+    color: #8B7869;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.6rem;
+    line-height: 1.45;
+}
+
+.freelancer-review-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+
+    margin-top: 25px;
+    padding: 19px 17px;
+
+    background: #F5EAD7;
+    border: 1px solid #E5D3B4;
+    border-radius: 14px;
+}
+
+.freelancer-review-section > div:first-child {
+    min-width: 0;
+}
+
+.freelancer-review-section h2 {
+    font-size: 1.45rem;
+}
+
+.freelancer-review-section p:last-child {
+    margin: 9px 0 0;
+
+    color: #75665D;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.73rem;
+    line-height: 1.65;
+}
+
+.freelancer-review-symbol {
+    flex: 0 0 auto;
+
+    color: #C8A45D;
+    font-family: Georgia, serif;
+    font-size: 5rem;
+    line-height: 1;
+}
+
+.freelancer-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 25px;
+    padding: 16px 0 7px;
+    border-top: 1px solid #E6D9CA;
+
+    text-align: center;
+}
+
+.freelancer-footer > span,
+.freelancer-footer > strong {
+    color: #A67F3F;
+}
+
+.freelancer-footer > span {
+    font-size: 0.9rem;
+}
+
+.freelancer-footer p {
+    margin: 0;
+
+    color: #8B7869;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.67rem;
+}
+
+.freelancer-footer > strong {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.15em;
+}
+
+.freelancer-not-found {
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+
+    padding: 25px;
+    text-align: center;
+}
+
+.freelancer-not-found h1 {
+    margin: 0;
+
+    color: #2B1D18;
+    font-family: "Bodoni 72", Didot, Georgia, serif;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.freelancer-not-found > p {
+    color: #75665D;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.84rem;
+    line-height: 1.6;
+}
+
+.freelancer-not-found .freelancer-primary-button {
+    margin-bottom: auto;
+}
+
+.freelancer-page button:focus-visible {
+    outline: 2px solid #B58D49;
+    outline-offset: 3px;
+}
+
+@media (max-width: 520px) {
+    .freelancer-header {
+        gap: 8px;
+        padding: 11px 13px;
+    }
+
+    .freelancer-back-button {
+        flex-basis: 32px;
+        width: 32px;
+        height: 32px;
+    }
+
+    .freelancer-header-copy p {
+        font-size: 0.51rem;
+        letter-spacing: 0.1em;
+    }
+
+    .freelancer-header-copy h1 {
+        font-size: 1.25rem;
+    }
+
+    .freelancer-content {
+        padding: 15px 13px 23px;
+    }
+
+    .freelancer-cover {
+        height: 120px;
+    }
+
+    .freelancer-hero-body {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+        padding: 0 14px 16px;
+    }
+
+    .freelancer-avatar {
+        width: 68px;
+        height: 68px;
+        margin-top: -28px;
+    }
+
+    .freelancer-hero-details {
+        padding-top: 10px;
+    }
+
+    .freelancer-name-row h2 {
+        font-size: 1.65rem;
+    }
+
+    .freelancer-name-row {
+        gap: 8px;
+    }
+
+    .freelancer-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .freelancer-stats > div {
+        min-height: 86px;
+    }
+
+    .freelancer-portfolio-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
+    }
+
+    .freelancer-project-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+    }
+
+    .freelancer-project-card:last-child:nth-child(odd) .freelancer-project-image {
+        aspect-ratio: 1.6 / 1;
+    }
+
+    .freelancer-review-section {
+        padding: 16px 13px;
+    }
+
+    .freelancer-review-symbol {
+        font-size: 3.8rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .freelancer-project-image img,
+    .freelancer-save-button {
+        transition: none;
+    }
+}
+
+
+/* =====================================================
+   WORKLY — PREMIUM PORTFOLIO EMPTY STATE
+   ===================================================== */
+
+.fg-empty {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: minmax(190px, 250px) minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    align-items: center;
+    gap: 12px 36px;
+    min-height: 295px;
+    padding: 34px clamp(24px, 4vw, 46px);
+    margin: 22px 0;
+    overflow: hidden;
+    text-align: left;
+    border: 1px solid #e7d8c3;
+    border-radius: 22px;
+    background: radial-gradient(circle at 15% 15%, #f3e5cd 0, transparent 42%),
+    linear-gradient(120deg, #fffdf8, #f5ecdf);
+    box-shadow: 0 12px 35px rgba(43, 29, 24, 0.045);
+}
+
+.fg-empty::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 360px;
+    height: 360px;
+    right: -130px;
+    top: -190px;
+    border: 1px solid rgba(200, 164, 93, 0.23);
+    border-radius: 50%;
+    box-shadow: 0 0 0 28px rgba(200, 164, 93, 0.045),
+    0 0 0 58px rgba(200, 164, 93, 0.035);
+}
+
+.fg-empty::after {
+    content: "WORKLY  •  CREATE  •  SHOWCASE";
+    position: absolute;
+    right: 25px;
+    bottom: 20px;
+    color: #ad946b;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.fg-empty-art {
+    position: relative;
+    isolation: isolate;
+    grid-column: 1;
+    grid-row: 1 / 4;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 205px;
+    border: 1px solid rgba(200, 164, 93, 0.25);
+    border-radius: 25px;
+    background: radial-gradient(circle at 50% 40%, #fff8e9 0, transparent 58%),
+    linear-gradient(145deg, #e8d8bd, #f8f1e5);
+    color: #956e30;
+    font-size: 67px;
+    box-shadow: 0 16px 35px rgba(80, 55, 29, 0.09);
+}
+
+.fg-empty-art::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 112px;
+    height: 140px;
+    border: 1px solid #c5a774;
+    border-radius: 17px;
+    background: linear-gradient(#fffdf8, #f5ebda);
+    box-shadow: 8px 10px 0 -3px #ddc9a8,
+    15px 17px 0 -7px #b99b68;
+    transform: rotate(-9deg);
+}
+
+.fg-empty-art::after {
+    content: "✧";
+    position: absolute;
+    top: 15px;
+    right: 24px;
+    color: #a47e40;
+    font-size: 35px;
+}
+
+.fg-empty h3 {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+    color: #2b1d18;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(21px, 2vw, 28px);
+    letter-spacing: -0.5px;
+}
+
+.fg-empty p {
+    grid-column: 2;
+    grid-row: 2;
+    max-width: 520px;
+    margin: 0;
+    color: #796e63;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.fg-empty .fw-primary-button {
+    grid-column: 2;
+    grid-row: 3;
+    justify-self: start;
+    min-height: 43px;
+    padding: 0 19px;
+    background: #2b1d18;
+    box-shadow: 0 7px 17px rgba(43, 29, 24, 0.13);
+}
+
+/* =====================================================
+   GIG COVER ART — WHEN NO SAMPLE IS UPLOADED
+   ===================================================== */
+
+.fg-gig-art {
+    overflow: hidden;
+    background: radial-gradient(circle at 75% 25%, #fff8e9, transparent 35%),
+    linear-gradient(145deg, #e9dbc5, #f8f3eb);
+}
+
+.fg-gig-art:has(> span)::before {
+    content: "";
+    position: absolute;
+    width: 125px;
+    height: 155px;
+    border: 1px solid rgba(155, 120, 69, 0.35);
+    border-radius: 20px;
+    background: linear-gradient(145deg, #fffdf9, #eee1cd);
+    box-shadow: 10px 11px 0 -4px #ddc8a5,
+    17px 19px 0 -8px #bd9c67;
+    transform: rotate(-8deg);
+}
+
+.fg-gig-art:has(> span)::after {
+    content: "✧";
+    position: absolute;
+    right: 22px;
+    top: 18px;
+    color: #a47e40;
+    font-size: 34px;
+}
+
+.fg-gig-art > span {
+    position: relative;
+    z-index: 1;
+    padding: 14px;
+    border: 1px solid rgba(200, 164, 93, 0.3);
+    border-radius: 15px;
+    background: rgba(255, 253, 249, 0.8);
+    box-shadow: 0 10px 25px rgba(43, 29, 24, 0.08);
+    backdrop-filter: blur(8px);
+}
+
+/* =====================================================
+   PUBLIC PORTFOLIO SAMPLE PLACEHOLDER
+   ===================================================== */
+
+.fg-public-gig-art {
+    position: relative;
+    background: radial-gradient(circle at 70% 25%, #fff6e5, transparent 40%),
+    linear-gradient(145deg, #e9dbc5, #f8f3eb);
+}
+
+.fg-public-gig-empty {
+    position: relative;
+    z-index: 1;
+    padding: 17px 25px;
+    border: 1px solid rgba(200, 164, 93, 0.35);
+    border-radius: 16px;
+    background: rgba(255, 253, 249, 0.78);
+    box-shadow: 0 10px 25px rgba(43, 29, 24, 0.08);
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 760px) {
+    .fg-empty {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        justify-items: center;
+        gap: 15px;
+        min-height: 0;
+        padding: 25px 20px 35px;
+        text-align: center;
+    }
+
+    .fg-empty-art {
+        grid-column: 1;
+        grid-row: 1;
+        width: min(220px, 100%);
+        height: 155px;
+    }
+
+    .fg-empty h3 {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .fg-empty p {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .fg-empty .fw-primary-button {
+        grid-column: 1;
+        grid-row: 4;
+        justify-self: center;
+    }
+
+    .fg-empty::after {
+        right: 0;
+        left: 0;
+        text-align: center;
+    }
+}
