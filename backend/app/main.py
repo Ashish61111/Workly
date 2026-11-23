@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.exc import SQLAlchemyError
-
+from app.routers.gigs import router as gigs_router
 from app.db.database import check_database_connection
 from app.routers.auth import router as auth_router
 from app.routers.profiles import router as profiles_router
@@ -27,6 +27,7 @@ app.add_middleware(
 # Register API routers.
 app.include_router(auth_router)
 app.include_router(profiles_router)
+app.include_router(gigs_router)
 
 
 @app.get("/")
