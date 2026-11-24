@@ -143,6 +143,7 @@ class GigCreate(BaseModel):
     sample_data: str | None = Field(
         default=None,
         max_length=850_000,
+
     )
 
     @field_validator("title", "description")
@@ -200,6 +201,7 @@ class GigCreate(BaseModel):
             self.sample_name,
             self.sample_type,
             self.sample_data,
+
         ]
 
         if any(value is not None for value in sample_fields):
@@ -321,6 +323,7 @@ class GigRead(BaseModel):
     express_fee: Decimal
     sample_name: str | None
     sample_type: str | None
+    sample_data: str | None
     created_at: datetime
     updated_at: datetime
     packages: list[GigPackageRead]

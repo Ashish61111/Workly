@@ -3,6 +3,8 @@ import {Link, useNavigate} from "react-router-dom";
 import BrandBadge from "../components/BrandBadge";
 import WorklyWordmark from "../components/WorklyWordmark";
 import "./AuthPages.css";
+import "./AuthPages.css";
+import {loginAccount} from "../services/authApi";
 
 function AuthPageFrame({heading, children}) {
     return (
@@ -156,16 +158,28 @@ function AuthNotice({children}) {
 }
 
 export function SignInPage() {
+    const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [notice, setNotice] = useState("");
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
+        setNotice("");
 
-        setNotice(
-            "Sign-in is not available yet. Account authentication will be enabled when the backend is connected."
-        );
+        try {
+            await loginAccount({
+                email: email.trim(),
+                password: password,
+            });
+
+            setNotice("Login successful!");
+
+            navigate("/freelancer/dashboard");
+
+        } catch (error) {
+            setNotice(error.message || "Unable to sign in. Please try again.");
+        }
     }
 
     return (

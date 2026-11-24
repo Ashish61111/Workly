@@ -23,7 +23,7 @@ export function clearAuthSession() {
 }
 
 
-async function apiRequest(path, options = {}) {
+export async function apiRequest(path, options = {}) {
     const {
         method = "GET",
         body,

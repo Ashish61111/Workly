@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Link, useNavigate, useParams} from "react-router-dom";
 import {
     formatWorklyMoney,
@@ -6,6 +6,12 @@ import {
 } from "./FreelancerPages";
 import WorklyWordMark from "../components/WorklyWordMark";
 import "./FreelancerGigsPages.css";
+import {
+    getMyGigs,
+    createGig,
+    updateGig,
+    deleteGig,
+} from "../services/gigsApi";
 
 const GIGS_KEY = "workly_demo_gigs";
 const MAX_STORAGE_GIGS = 5;
@@ -103,6 +109,71 @@ function makeDefaultPackages(gig = {}) {
         features: [...definition.defaultFeatures],
     }));
 }
+
+function mapApiGigToFrontend(apiGig) {
+    const packages = (apiGig.packages || []).map((item) => ({
+        id: item.package_type,
+        label: item.package_type.charAt(0).toUpperCase()
+            + item.package_type.slice(1),
+        price: Number(item.price),
+        deliveryDays: item.delivery_days,
+        revisions: item.revisions,
+        description: item.description,
+        features: item.features || [],
+    }));
+
+    return {
+        id: apiGig.id,
+        title: apiGig.title,
+        category: apiGig.category,
+        description: apiGig.description,
+        status: apiGig.status,
+        currencyCode: apiGig.currency_code,
+        expressAvailable: apiGig.express_available,
+        expressDays: apiGig.express_days ?? "2",
+        expressFee: Number(apiGig.express_fee || 0),
+        sampleName: apiGig.sample_name || "",
+        sampleType: apiGig.sample_type || "",
+        sampleData: apiGig.sample_data || "",
+        packages,
+        minPrice: packages[0]?.price || 0,
+        maxPrice: packages[2]?.price || 0,
+        deliveryDays: packages[0]?.deliveryDays || 7,
+        updatedAt: apiGig.updated_at,
+    };
+}
+
+
+function buildApiGigPayload(gig) {
+    return {
+        title: gig.title,
+        category: gig.category,
+        description: gig.description,
+
+        packages: gig.packages.map((item) => ({
+            package_type: item.id,
+            price: Number(item.price),
+            delivery_days: Number(item.deliveryDays),
+            revisions: Number(item.revisions),
+            description: item.description,
+            features: item.features,
+        })),
+
+        express_available: Boolean(gig.expressAvailable),
+        express_days: gig.expressAvailable
+            ? Number(gig.expressDays)
+            : null,
+
+        express_fee: gig.expressAvailable
+            ? Number(gig.expressFee)
+            : 0,
+
+        sample_name: gig.sampleName || null,
+        sample_type: gig.sampleType || null,
+        sample_data: gig.sampleData || null,
+    };
+}
+
 
 function normalizeGig(gig = {}) {
     const fallbackPackages = makeDefaultPackages(gig);
@@ -525,7 +596,7 @@ function GigEditor({initialGig, onSave, onCancel, slot, maxGigs}) {
         }
     }
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
         setError("");
 
@@ -601,7 +672,7 @@ function GigEditor({initialGig, onSave, onCancel, slot, maxGigs}) {
         setSaving(true);
 
         try {
-            onSave(gig);
+            await onSave(gig);
         } catch (saveError) {
             setError(saveError.message || "Your gig could not be saved. Try a smaller sample file.");
         } finally {
@@ -823,26 +894,66 @@ function GigEditor({initialGig, onSave, onCancel, slot, maxGigs}) {
    ===================================================== */
 
 export function FreelancerGigsPage() {
+
     const account = getGigAccountConfig();
     const maxGigs = account.maxGigs;
 
-    const [gigs, setGigs] = useState(() => readGigs());
+    const [gigs, setGigs] = useState([]);
     const [editing, setEditing] = useState(null);
     const [notice, setNotice] = useState("");
+    const [loading, setLoading] = useState(true);
 
-    function handleSave(gig) {
+    useEffect(() => {
+        let isMounted = true;
+
+        async function loadGigs() {
+            try {
+                const data = await getMyGigs();
+
+                if (isMounted) {
+                    setGigs(data.map(mapApiGigToFrontend));
+                }
+            } catch (error) {
+                if (isMounted) {
+                    setNotice(error.message || "Unable to load your gigs.");
+                }
+            } finally {
+                if (isMounted) {
+                    setLoading(false);
+                }
+            }
+        }
+
+        loadGigs();
+
+        return () => {
+            isMounted = false;
+        };
+    }, []);
+
+    async function handleSave(gig) {
         const exists = gigs.some((item) => item.id === gig.id);
 
-        const nextGigs = exists
-            ? gigs.map((item) => item.id === gig.id ? gig : item)
-            : [...gigs, gig];
-
-        if (nextGigs.length > maxGigs) {
+        if (!exists && gigs.length >= maxGigs) {
             throw new Error(`Your current limit is ${maxGigs} gigs.`);
         }
 
-        saveGigs(nextGigs);
-        setGigs(nextGigs);
+        const payload = buildApiGigPayload(gig);
+
+        const savedGig = exists
+            ? await updateGig(gig.id, payload)
+            : await createGig(payload);
+
+        const updatedGig = mapApiGigToFrontend(savedGig);
+
+        setGigs((current) =>
+            exists
+                ? current.map((item) =>
+                    item.id === updatedGig.id ? updatedGig : item
+                )
+                : [...current, updatedGig]
+        );
+
         setEditing(null);
 
         setNotice(
@@ -852,24 +963,27 @@ export function FreelancerGigsPage() {
         );
     }
 
-    function handleDelete(gigId) {
-        if (!window.confirm("Delete this gig, its packages and its saved sample?")) {
+    async function handleDelete(gigId) {
+        if (!window.confirm(
+            "Delete this gig, its packages and its saved sample?"
+        )) {
             return;
         }
 
-        const nextGigs = gigs.filter((gig) => gig.id !== gigId);
-
         try {
-            saveGigs(nextGigs);
-            setGigs(nextGigs);
-            setNotice("Gig deleted. You can now publish a replacement gig.");
+            await deleteGig(gigId);
+
+            setGigs((current) =>
+                current.filter((gig) => gig.id !== gigId)
+            );
+
+            setNotice("Gig deleted successfully.");
         } catch (error) {
             setNotice(error.message || "The gig could not be deleted.");
         }
     }
 
     const editingGig = gigs.find((gig) => gig.id === editing) || null;
-
     return (
         <GigWorkspaceLayout
             eyebrow="YOUR SERVICE PORTFOLIO"
